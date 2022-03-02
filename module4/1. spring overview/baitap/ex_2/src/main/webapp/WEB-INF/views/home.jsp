@@ -25,7 +25,7 @@
      </tr>
   </table>
 </form>
-    <h3 style="text-align: center"><p>${vietnamese!=null?vietnamese:message}</p></h3>
+<h3>${result}</h3>
 <script src="/assert/jquery/jquery-3.5.1.min.js"></script>
 <script src="/assert/bootstrap413/js/popper.min.js"></script>
 <script src="/assert/datatables/js/jquery.dataTables.min.js"></script>

@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="section" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -40,7 +40,7 @@
         </tr>
         <tr>
             <td><form:label path="spamsFilter">Spams filter:</form:label></td>
-            <td><form:checkbox path="spamsFilter" value="true"/>Enable spams filter</td>
+                <td><form:checkbox path="spamsFilter" value="Enable spams filter"/>Enable spams filter</td>
             </td>
         </tr>
         <tr>
@@ -52,8 +52,6 @@
           <td style="background:aqua"><input type="reset" value="Cancel"></td>
       </tr>
     </table>
-
 </form:form>
-
 </body>
 </html>
