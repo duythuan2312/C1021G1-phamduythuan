@@ -1,0 +1,12 @@
+BEGIN 
+Input a,b,c
+a = max
+If ( a>b & a>c )
+Display a 
+Else
+If ( b > c )
+Display b
+Else
+Display c
+END
+

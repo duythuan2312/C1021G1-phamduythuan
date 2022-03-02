@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="Canvas"  width="1000" height="1000"></canvas>
+<script>
+ class Rectangular{
+     constructor(width,height) {
+         this.width = width;
+         this.height = height;
+     }
+     Area(){
+         let area = this.width*this.height;
+         return area;
+ }
+     Perimeter(){
+         let perimenter = (this.width*this.height)*2;
+         return perimenter
+     }
+ }
+     let height = parseInt(prompt("nhập chiều dài"));
+     let width = parseInt(prompt("Nhâp chiều rộng"));
+     let num = new Rectangular(height,width);
+     console.log("Dien tich la:" +num.Area());
+     console.log("Chu vi la :" +num.Perimeter());
+
+
+     let ctx = document.getElementById("Canvas");
+     let canvas = ctx.getContext("2d");
+     canvas.rect(50,70,width,height);
+     canvas.stroke();
+
+
+
+
+
+</script>
+
+</body>
+</html>

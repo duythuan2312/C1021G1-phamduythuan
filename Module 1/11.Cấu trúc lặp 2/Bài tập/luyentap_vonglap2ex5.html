@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let TienVay = parseInt(prompt("Nhập số tiền vay:"));
+    let ThangVay = parseInt(prompt("Nhập số tháng vay:"));
+    let laiHangThang = 0;
+    let tongLai = 0;
+    let traHangThang = 0;
+    for (let i = 1; i <= ThangVay; i++){
+        laiHangThang = TienVay * 0.1/12;
+        tongLai += laiHangThang;
+        traHangThang = TienVay/ThangVay + laiHangThang;
+    }
+    document.write("Tổng tiền lãi khi vay "+ TienVay + " Là " + parseFloat(tongLai).toFixed(0) + " VNĐ.<br>");
+    document.write("Số tiền phải trả hàng tháng là "+ parseFloat(traHangThang).toFixed(0) + " VNĐ.");
+</script>
+</body>
+</html>

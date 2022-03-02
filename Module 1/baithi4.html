@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<h1 style="text-align: center">Quản lí công nhân</h1>
+<table border="1" style="margin: auto">
+    <tr style="background-color: #908b8b">
+        <td>STT</td>
+        <td>Họ và tên</td>
+        <td>Ngày sinh</td>
+        <td>Địa chỉ</td>
+        <td>Lương</td>
+        <td>Chức vụ</td>
+    </tr>
+    <tr style="background-color: #e0e0e0">
+        <td>1</td>
+        <td>Trương Tấn A</td>
+        <td>11-11-1997</td>
+        <td>Quảng Nam</td>
+        <td>10000000$</td>
+        <td>CEO</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Trương Tấn B</td>
+        <td>11-11-1998</td>
+        <td>Đà nẵng</td>
+        <td>10000000$</td>
+        <td>COO</td>
+    </tr>
+    <tr style="background-color: #e0e0e0">
+        <td>3</td>
+        <td>Trương Tấn C</td>
+        <td>11-11-1999</td>
+        <td>Huế</td>
+        <td>20000000$</td>
+        <td>Tuter</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<script>
+    class Quanli {
+        constructor(stt,hovaten,ngaysinh,diachi,luong,chucvu) {
+            this.stt = stt;
+            this.hovaten = hovaten;
+            this.ngaysinh = ngaysinh;
+            this.diachi = diachi;
+            this.luong = luong;
+            this.chucvu = chucvu;
+        }
+    }
+    let congNhan = new Quanli(1,"Phạm Duy Thuận","23/12/2003","Quảng Nam",10000000,"Giám đốc codegym");
+    console.log(congNhan);
+</script>
+</body>
+</html>

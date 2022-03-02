@@ -1,0 +1,43 @@
+#element1{
+
+    font-weight: bold;
+
+}
+.vietnam {
+    text-indent: 30px;
+}
+h1 {
+text-decoration: underline;
+    text-align: center;
+    background-color: chartreuse;
+}
+
+.vietnam {
+
+    text-align: justify;
+    font-size: unset;
+}
+.box {
+    margin: 0 auto;
+    width: 550px;
+    border: 1px solid #333;
+}
+
+.vn{
+    text-align: justify;
+}
+.inhoa {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: blue;
+}
+h3 {
+    text-align: center;
+    text-decoration: underline;
+}
+.color {
+    color: red;
+}
+.css {
+    color: orangered;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiem_tra(number) {
+        if (number>0 || number<=0){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+    let nhapvao = prompt("Nhập vào từ người dùng");
+    let result = kiem_tra(nhapvao);
+    document.write("Trả về giá trị " + result);
+</script>
+</body>
+</html>

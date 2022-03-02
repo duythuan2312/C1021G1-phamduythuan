@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+      class Mobile{
+          constructor(pin) {
+              this.pin = pin;
+              this.soanthao = "";
+              this.hopthuden = "";
+              this.dagui = "";
+              this.status = true;
+          }
+          statuspin(){
+              if (this.pin <= 0){
+                  return this.status = false;
+              }else if (1<this.pin<20){
+                  return "Pin yếu "
+              }
+          }
+          turnon(){
+              return this.status = true;
+          }turnon(){
+              return this.status = false;
+          }
+          checkpin(){
+              if (this.pin === 100){
+                  return "Pin đầy"
+              }else if (this.pin <100){
+                  return "Đang sạc bin"
+              }
+          }
+          nhantin(messsenger){
+              if(this.pin<= 0){
+                  return this.status = false;
+              }else {
+                  return this.soanthao += messsenger;
+                  this.tieuhao();
+              }
+          }
+          hopthu(dienthoai){
+              if (this.pin <= 0){
+                  return this.status = false;
+              }else {
+                  dienthoai.hopthugui(this.soanthao);
+                  this.dagui = this.soanthao;
+                  this.soanthao = "";
+                  this.tieuhao();
+              }
+          }
+          hopthugui(mess){
+              if (this.pin <= 0){
+                  return this.status = false;
+              }else {
+                  this.hopthuden += mess;
+                  this.tieuhao();
+              }
+          }
+          tieuhao(){
+              this.pin -=1;
+          }
+
+      }
+      let iphone = new Mobile(50);
+      let xiaomi = new Mobile(100);
+      iphone.nhantin("Xin chao");
+      iphone.hopthu(xiaomi);
+      xiaomi.nhantin("Hello");
+      xiaomi.hopthu(iphone);
+      console.log(iphone)
+      console.log(xiaomi)
+</script>
+</body>
+</html>

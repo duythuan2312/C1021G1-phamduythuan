@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let MyDate = function(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.getDay = function(day) {
+            return this.day;
+        }
+        this.getMonth = function(month) {
+            return this.month;
+        }
+        this.getYear = function(year) {
+            return this.year;
+        }
+    };
+
+    let date = new MyDate(23, 12, 2003);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
+    alert(day + "/" + month + "/" + year);
+</script>
+</body>
+</html>

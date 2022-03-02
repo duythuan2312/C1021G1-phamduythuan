@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>menu</title>
+</head>
+<body>
+<h2>Menu</h2>
+<ol>
+    <li>Cafe </li>
+    <li>Nước Cam</li>
+    <li>Nước ép</li>
+    <li>Nước lọc</li>
+    <li>Bò húc</li>
+</ol>
+<script>
+    let quantity = 0;
+    let totalmoney = 0;
+    let number = parseInt(prompt("Nhập vào thức uống"));
+   do {
+       switch (number) {
+           case 1:
+               alert("Cafe có giá 10000vnđ")
+               quantity = parseInt(prompt("Nhập số lượng"));
+               totalmoney = quantity * 15000;
+               alert("Tổng tiền của bạn là " + totalmoney);
+               break;
+           case 2:
+               alert("Nước cam có giá 30000vnđ")
+               quantity = parseInt(prompt("Nhập số lượng"));
+               totalmoney = quantity * 30000;
+              alert("Tổng tiền của bạn là " + totalmoney);
+              break;
+           case 3:
+               alert("Nước lọc có giá 5000vnđ")
+               quantity = parseInt(prompt("Nhập số lượng"));
+               totalmoney = quantity * 5000;
+               alert("Tổng tiền của bạn là " + totalmoney);
+               break;
+               default:
+                   alert("To be contniue")
+               break;
+       }
+
+   }while (number == 3);
+</script>
+
+</body>
+</html>

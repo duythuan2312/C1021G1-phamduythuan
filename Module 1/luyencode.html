@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ // function Tham_so(num1,num2) {
+ //     if (num1 > num2){
+ //         alert("Thông báo")
+ //     }else if (num2 >num1){
+ //         return num1 +num2;
+ //     }
+ //
+ // }
+ // let num1 = parseInt(prompt("Nhập vào một số"));
+ // let num2 = parseInt(prompt("Nhập vào một số"));
+ // let result = Tham_so(num1,num2);
+ // alert("Kết quả là " +result);
+// function kiem_tra(number) {
+//     let ngoisao =  ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe','Regulus'];
+//     let chomsao = [ 'Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major','Leo'];
+//     for (let i =0 ; i<number.length ;i++){
+//         if (number == ngoisao[i]){
+//             return chomsao[i];
+//
+//         }
+//     }
+//     return " ";
+//
+// }
+// let nhapsa0 = prompt("Nhap sao");
+//  result = kiem_tra(nhapsa0);
+// if (nhapsa0 == " "){
+//     alert("Ko co ngoi sao nao ca");
+// }else {
+//     alert("Chom sao do la " + result);
+// }
+    function Kiem_tra(array,char) {
+        let count = 0;
+        for (let i = 0 ; i<array.length ; i++){
+            for (let j = 0 ; j < array[i].length;j++){
+                if (char == array[i][j]){
+                    count++;
+                }
+            }
+        }
+        if (count!==0){
+            return count;
+        }else {
+            return -1;
+        }
+
+    }
+    let Size = parseInt(prompt("Nhập vào độ dài của mảng "));
+    let array = new Array(Size);
+    for (let i =0 ; i<array.length;i++){
+        array[i] = prompt("Nhập vào kí tự của mảng " +i);
+    }
+    let char = prompt("Nhập vào một kí tự ");
+    let result = Kiem_tra(array,char)
+    if (result > 0){
+        document.write("Số lần xuất hiện của " +char + "là :" +result);
+    }else {
+        document.write(result )
+    }
+</script>
+</body>
+</html>

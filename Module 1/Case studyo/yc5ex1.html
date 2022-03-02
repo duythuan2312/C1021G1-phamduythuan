@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số hàng :"));
+    let m = parseInt(prompt("Nhập số cột :"));
+    let array = new Array(n,m);
+    let sum = 0;
+    for (let i = 0; i < n; i++){
+        array[i] = [];
+        for (let j = 0 ; j < m ; j++){
+            array[i][j] = parseInt(prompt("Nhập giá trị:" + [i,j]));
+            if (array[i][j] % 2 == 0){
+                sum += array[i][j];
+            }
+        }
+    }
+    document.write("Tổng các số chẳn là" +sum+"<br>");
+console.log(array);
+</script>
+</body>
+</html>

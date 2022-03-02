@@ -1,0 +1,29 @@
+-- CREATE DATABASE quan_li_diem_thi;
+-- USE quan_li_diem_thi;
+-- CREATE TABLE Hoc_Sinh(
+--     Ma_HS VARCHAR(20) PRIMARY KEY,
+--     Ten_HS VARCHAR(50),
+--     Ngay_Sinh DATETIME,
+--     Lop VARCHAR(20),
+--     GT VARCHAR(20)
+-- );
+-- INSERT INTO quan_li_diem_thi.hoc_sinh VALUES ("K222","Phạm Duy Thuận","2003/12/23","C1021G1","Nam"),("K21","Đoàn Thị Hoàng Tuyên","2003/5/1","k21","Nữ");
+-- SELECT * FROM quan_li_diem_thi.hoc_sinh;
+-- CREATE TABLE Mon_Hoc(
+--     Ma_MH VARCHAR(255) PRIMARY KEY,
+--     Ten_MH VARCHAR(255),
+--     Ma_GV VARCHAR(255)
+-- );
+-- INSERT INTO Mon_Hoc VALUES ("MT" ,"Toán","g12"),("ML","Lý","g87");
+-- SELECT * FROM quan_li_diem_thi.mon_hoc;
+-- CREATE TABLE Bang_Diem(
+--     Ma_HS VARCHAR(255),
+--     Ma_MH VARCHAR(255),
+--     Diem_Thi INT,
+--     Ngay_KT DATETIME,
+--     PRIMARY KEY (Ma_HS, Ma_MH),
+--     FOREIGN KEY (Ma_HS) REFERENCES Hoc_Sinh(Ma_HS),
+--     FOREIGN KEY (Ma_MH) REFERENCES Mon_Hoc(Ma_MH)
+-- );
+-- INSERT INTO quan_li_diem_thi.bang_diem VALUES ("k222","MT",8,"2022-1-11"),("k21","ML",9,"2022-1-11");
+-- SELECT * FROM quan_li_diem_thi.bang_diem;

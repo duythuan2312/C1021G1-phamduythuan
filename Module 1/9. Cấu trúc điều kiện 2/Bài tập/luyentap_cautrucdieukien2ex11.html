@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thunhap = parseInt(prompt("Thu nhập "));
+    if (thunhap <= 5000000){
+         tienthue = thunhap * 0.05;
+    }else if(thunhap <= 10000000){
+        tienthue = (thunhap * 0.1) -25000;
+    }else if (thunhap <= 18000000){
+        tienthue = (thunhap * 0.15)-75000;
+    }else if (thunhap <= 32000000){
+        tienthue = (thunhap * 0.2) - 165000;
+    }else if (thunhap <= 52000000){
+        tienthue = (thunhap *0.25)-325000;
+    }else {
+        tienthue = (thunhap*0.3)-585000;
+    }
+    alert("Tiền thuế phải nộp là :" + tienthue);
+</script>
+</body>
+</html>

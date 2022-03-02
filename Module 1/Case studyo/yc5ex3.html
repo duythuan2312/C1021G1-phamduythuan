@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let hang = parseInt(prompt("Nhập vào số hàng"));
+    let cot = parseInt(prompt("Nhập vào số cột"));
+    let array = new Array(hang,cot);
+    let max = 0;
+    let min = 0;
+    let arr = [];
+
+    for (let i = 0 ; i < hang ; i++){
+        array[i] = [];
+        for (let j = 0 ; j < cot ; j++) {
+            array[i][j] = parseInt(prompt("Nhập vào vị trí trong mảng" + [i, j]));
+        }
+    }
+    for (let i = 0 ; i<array.length ;i++){
+        for (let j = 0 ; j<array[i].length ; j++){
+            if (array[i][j] > max){
+                max = array[i][j];
+            }if (array[i][j] < min){
+                min = array[i][j];
+            }
+        }
+        arr.push(max);
+        arr.push(min);
+        console.log(arr);
+        }
+
+</script>
+</body>
+</html>

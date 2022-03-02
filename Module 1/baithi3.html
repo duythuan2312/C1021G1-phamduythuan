@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<form>
+    Nhập tháng:<input type="text" id="month">
+    <br><br>
+    Nhập năm:<input type="text" id="year"><br>
+    <button type="button" onclick="kiemtra()">Tính</button>
+    <p id="ketqua">Kết quả</p>
+</form>
+<script>
+    function kiemtra() {
+        let month = parseInt(document.getElementById("month").value);
+        let years = parseInt(document.getElementById("year").value);
+        switch (month) {
+            case (1):
+            case (3):
+            case (5):
+            case (7):
+            case (8):
+            case (10):
+            case (12):
+                document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 31 ngày.";
+                break;
+            case (2):
+                if (years % 100 === 0) {
+                    if (years % 400 === 0) {
+                        document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 29 ngày.";
+                    } else {
+                        document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 28 ngày.";
+                    }
+                } else if (years % 4 === 0) {
+                    document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 29 ngày.";
+                } else {
+                    document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 28 ngày.";
+                }
+                break;
+            case (4):
+            case (6):
+            case (9):
+            case (11):
+                document.getElementById("ketqua").innerHTML = "Tháng " + month + " năm " + years + " có 30 ngày.";
+                break;
+        }
+    }
+</script>
+</body>
+</html>

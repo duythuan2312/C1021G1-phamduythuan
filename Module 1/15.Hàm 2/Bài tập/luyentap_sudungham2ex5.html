@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function gia_tri(num1,num2,num3) {
+       if(num1<num2 && num1<num3){
+           return num1;
+       }if (num2<num3){
+           return num3;
+        }else {
+           return num2;
+        }
+    }
+    let bien1 = parseInt(prompt("Nhập vào số nguyên"));
+    let bien2 = parseInt(prompt("Nhập vào số nguyên"));
+    let bien3 = parseInt(prompt("nhập vào số nguyên"));
+    let result = gia_tri(bien1,bien2,bien3);
+    document.write(result);
+</script>
+
+</body>
+</html>

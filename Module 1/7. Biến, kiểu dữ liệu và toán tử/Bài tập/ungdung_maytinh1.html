@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<table>
+    <tr>
+        <td>
+            <input type="text" id="tanggiam">
+        </td>
+        <td>
+            <input type="text" id="nhanchia">
+        </td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>
+            <button onclick="nhapso()" id="tang">Addition(+)</button>
+        </td>
+        <td>
+            <button onclick="nhapso()" id="giam">Subtraction(-)</button>
+        </td>
+        <td>
+            <button onclick="nhapso()" id="nhan">Multiplication(x)</button>
+        </td>
+        <td>
+            <button onclick="nhapso()" id="chia">Division(/)</button>
+        </td>
+
+    </tr>
+    <h1 id="Result"></h1>
+    <script>
+
+        function nhapso() {
+            let a = parseInt(document.getElementById('tanggiam').value);
+            let b = parseInt(document.getElementById('nhanchia').value);
+            let c = a + b;
+            let d = a - b;
+            let nhan = a * b;
+            let n = a / b;
+            document.getElementById("Result").innerHTML = "Result : " + c;
+            // document.getElementById("Result").innerHTML = "Result : " + d;
+            // document.getElementById("Result").innerHTML = "Result : " + nhan;
+            // document.getElementById("Result").innerHTML = "Result : " + n;
+
+        }
+
+
+
+       </script>
+</table>
+
+</body>
+</html>

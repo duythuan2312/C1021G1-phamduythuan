@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let rowspan = parseInt(prompt("Nhập số hàng :"));
+    let cospan = parseInt(prompt("Nhập số cột :"));
+    let array = new Array(rowspan,cospan);
+    let newarr = [];
+    for (let i = 0; i < rowspan; i++){
+        array[i] = [];
+        for (let j = 0 ; j < cospan ; j++){
+            array[i][j] = parseInt(prompt("Nhập giá trị:" + [i,j]));
+            }
+
+    }
+    for (let i = 0; i < array.length ; i++ ) {
+        for (let j = 0; j < array[i].length; j++) {
+            let count = 0;
+            for (let k = 1; k <= array[i][j]; k++) {
+                if (array[i][j] % k == 0) {
+                    count++;
+                }
+            }
+            if (count == 2) {
+                newarr.push(array[i][j]);
+            }
+        }
+    }
+    console.log(newarr);
+
+
+</script>
+</body>
+</html>

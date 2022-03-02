@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators   = [5,9,5,6,8];
+    let denominators  = [2,3,4,3,4];
+    let index = 0;
+    for (let i = 0 ; i <numerators.length ; i++){
+        if (numerators[0] * denominators[i] < numerators[i] * denominators[0]){
+           index = i;
+        }
+
+    }
+    console.log("Giá trị lớn nhất là " +numerators[index]+ "/" + denominators[index]+ "Có chỉ số bằng :" +index);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let letter = prompt("nhập vào chữ: ");
+    let capitalizeletter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lowercaseletters = 'abcdefghijklmnopqrstuvwxyz';
+    let println = [];
+    for (let i = 0; i < letter.length; i++){
+        if(capitalizeletter.indexOf(letter[i]) !== -1){
+            println.push(letter[i].toLowerCase());
+        }else if(lowercaseletters.indexOf(letter[i]) !== -1){
+            println.push(letter[i].toUpperCase());
+        }else{
+            println.push(letter[i]);
+        }
+    }
+    document.write(println.join(""));
+</script>
+</body>
+</html>

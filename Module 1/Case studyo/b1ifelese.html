@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let thunhap = parseInt(prompt("Nhập lương"));
+ let tienthue = 0 ;
+ let luongrong = 0;
+  if (thunhap < 7000000){
+      tienthue = thunhap * 0.05;
+      luongrong = thunhap - tienthue;
+  }else if(thunhap < 15000000){
+      tienthue = thunhap * 0.1;
+      luongrong = thunhap - tienthue;
+
+  }else {
+      tienthue  = thunhap * 0.2;
+      luongrong = thunhap - tienthue;
+  }
+  document.write("Tiền thuế là" +tienthue + "<br>");
+  document.write("Thu nhập sao khi trừ thuế là" + luongrong);
+</script>
+</body>
+</html>

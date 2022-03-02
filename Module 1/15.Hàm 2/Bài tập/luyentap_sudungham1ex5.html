@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="thuan">-->
+<!--<button type="button" onclick="ngoi_sao()">check</button>-->
+<script>
+
+    //C1;
+    // function ngoi_sao() {
+    //     let ngoisao = ['laris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' ,' Regulus'];
+    //     let chomsao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    //     let num1 = document.getElementById("thuan").value;
+    //     let check = true
+    //     for (let i = 0; i<=ngoisao.length ; i++){
+    //         if (num1 === ngoisao[i]) {
+    //             result = chomsao[i];
+    //             check = true;
+    //             break;
+    //         }
+    //         check = false;
+    //     }
+    //     if (check){
+    //         alert("Ngôi sao cần tìm là :" + result);
+    //     }else if (num1 !== ""){
+    //         alert("Không có chòm sao nào hết ");
+    //     }
+    // }
+    // ngoi_sao();
+    // C2;
+    function ngoi_sao(number) {
+        let ngoisao = ['laris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe' ,' Regulus'];
+        let chomsao = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+        for (let i = 0; i < number.length; i++) {
+            if (number === ngoisao[i]) {
+                return chomsao[i];
+            }
+        }
+        return  " ";
+    }
+    let nhapSao = prompt("Nhập ngôi sao muốn tìm: ");
+    result = ngoi_sao(nhapSao);
+    if (nhapSao == " ") {
+        alert("Không tìm thấy ngôi sao này.");
+    }else {
+        alert("Ngôi sao này có tên là:" + result);
+    }
+
+
+</script>
+</body>
+</html>
+

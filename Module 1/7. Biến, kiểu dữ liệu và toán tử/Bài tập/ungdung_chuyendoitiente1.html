@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="margin: auto">
+    <th>Amount</th>
+    <th>From Currency</th>
+    <th>To Currency</th>
+    <tr>
+        <td>
+            <input type="text" id="dauvao">
+        </td>
+        <td>
+            <select name="you" id="select1" style="r: 100px">
+                <option value="VN">VND</option>
+                <option value="MY">USD</option>
+            </select>
+        </td>
+        <td>
+            <select name="you" id="select2" style="width: 100px">
+                <option value="MY">USD</option>
+                <option value="VN">VND</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="nhapso()">Convert</button>
+        </td>
+    </tr>
+</table>
+<div id="ketqua"></div>
+<script>
+     function nhapso() {
+         let giatrivao = document.getElementById('dauvao').value;
+         let a = document.getElementById('select1').value;
+         let b = document.getElementById('select2').value;
+         if ( a == "VN" && b =="MY") {
+             document.getElementById("ketqua").innerHTML = "Result: " + giatrivao / 24000;
+         }
+         else if(a == "MY" && b == "VN"){
+             document.getElementById("ketqua").innerHTML = "Result: " + giatrivao * 24000;
+         }
+     }
+
+</script>
+</body>
+</html>

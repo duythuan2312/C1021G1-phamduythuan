@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     function isPalindrome(s) {
+         let check;
+          let doDai = s.length;
+          for (let i = 0; i < doDai/2;i++){
+              if (s[i] === s[doDai-i-1]){
+                   check = true;
+              }else {
+                  check = false;
+                   break;
+                    }
+                 }
+               return check;
+           }
+     let n = prompt("Nhập chuỗi cần kiểm tra.");
+     let chuoi = n.split("");
+     let kiemTra = isPalindrome(chuoi);
+          if (kiemTra){
+          alert("Chuỗi đối xứng");
+           }else {
+           alert("Chuỗi không đối xứng");
+       }
+</script>
+
+</body>
+</html>

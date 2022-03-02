@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let baikientra = parseFloat(prompt("Điểm bài kiểm tra"));
+      let diemgiuaki = parseFloat(prompt("Nhập điểm giữa kì"));
+      let diemcuoiki = parseFloat(prompt("Nhập điểm cuối kì"));
+       let diemtb = (baikientra+(diemgiuaki*2)+(diemcuoiki*3))/6 ;
+       if (diemtb >= 8) {
+           alert("Hoc sinh giỏi");
+       } else if (diemtb >= 6.5){
+           alert("Học sinh khá");
+       }else if (diemtb >= 5) {
+           alert("Học sinh trung bình");
+       }else {
+           alert("Học sinh yếu");
+       }
+
+
+</script>
+</body>
+</html>

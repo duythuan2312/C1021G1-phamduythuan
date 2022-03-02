@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let dem = 0;
+    for (let i = 0; i < 6; i++){
+        array[i] = prompt("Nhập vào đây: ");
+    }
+    document.write("Mảng gồm: " + array+ "<br>")
+    for (let i = 0; i < array.length;i++){
+        if (array[i] % 2 === 0 ||array[i] % 2 === 1){
+            dem ++;
+        }
+    }
+    document.write("Trong mảng có " + dem + " kí tự số<br>")
+</script>
+</body>
+</html>

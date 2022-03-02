@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery{
+        constructor(pin) {
+            this.status = true;
+            this._pin = pin;
+        }
+
+        getpin() {
+            return this._pin;
+        }
+
+        setpin(value) {
+            this._pin = value;
+        }
+        decreasepin(){
+            if (this._pin > 0){
+                this._pin--;
+            }
+        }
+    }
+    class Flash{
+        constructor(status,battery) {
+            this._battery = battery;
+            this._status = status;
+        }
+
+
+        getstatus() {
+            return this._status;
+        }
+
+        setstatus(value) {
+            this._status = value;
+        }
+
+        getbattery() {
+            return this._battery;
+        }
+
+        setbattery(value) {
+            this._battery = value;
+        }
+        light(){
+            if (this._status){
+                alert("Đèn đang bật");
+            }else {
+                alert("Đèn đang tắt");
+            }
+        }
+        turnon(){
+            if (this._battery.getpin()>0){
+               this._status = true;
+               this._battery.decreasepin();
+            }else {
+                alert("Hết pin rồi");
+            }
+        }
+        turnoff(){
+            this._status = false;
+        }
+    }
+    let battery = new Battery(10);
+    let flash = new Flash(false,battery);
+
+    document.write("Baterry infor: " +battery.getpin() + "<br>");
+    flash.light();
+    flash.turnon();
+    flash.light();
+    document.write("Baterry infor after turn on: " +battery.getpin());
+
+</script>
+</body>
+</html>

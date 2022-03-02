@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //c1
+    // let n  = parseInt(prompt("Nhập độ dài mảng"))
+    // let arr = new Array(n)
+    // for(let i=0;i<arr.length;i++){
+    //     arr[i] = prompt("Nhập kí tự vào phần tử " + i)
+    // }
+    //
+    // let chars = prompt("Nhập kí tự")
+    //
+    // function checkChars(array, character) {
+    //     let count = 0
+    //     for(let j=0; j<array.length; j++) {
+    //         if (character === array[j]) {
+    //             count++
+    //         }
+    //     }
+    //     if(count > 0 ){
+    //         return count
+    //     } else {
+    //         return -1
+    //     }
+    // }
+    //
+    // let result = checkChars(arr, chars)
+    // alert("Số lần xuất hiện là :"+result)
+//c2
+   function check_char(char,array) {
+       let count = 0;
+       for (let i=0 ; i<array.length ; i++){
+           for (let j=0; j<array[i].length ; j++){
+               if (char === array[i][j]){
+                   count ++;
+               }
+           }
+       }
+           if (count !== 0){
+               return count;
+           }else {
+               return -1;
+           }
+   }
+   let num = prompt("Nhập độ dài của mảng ");
+   let arr = [];
+   for (let i=0 ; i<num ; i++){
+       arr[i]= prompt("Nhập vào kí tự của mảng" +i);
+   }
+   let char = prompt("Nhập vào một kí tự của mảng");
+   check = check_char(char,arr);
+   if (check > 0){
+       document.write("Số lần xuất hiện của " + char +  "là" +check);
+   }else {
+       alert(check);
+   }
+
+
+
+</script>
+</body>
+</html>

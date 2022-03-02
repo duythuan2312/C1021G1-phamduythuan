@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name,kg,speed,status) {
+            this.name = name;
+            this.kg = kg;
+            this.speed = speed;
+            this.status = status;
+        }
+        Generate(){
+            console.log(this.name+"Chit chit");
+        }
+
+    }
+    class Cat{
+        constructor(name,kg,speed) {
+            this.name = name;
+            this.kg = kg;
+            this.speed = speed;
+        }
+        Generate(){
+            console.log(this.name + "Meo meo");
+        }
+        CatchRat(Rat){
+            console.log("catchrat");
+            if (this.speed > Rat.speed){
+                this.EatRat(Rat);
+            }else {
+                console.log("Khong duoi kip chuot");
+            }
+        }
+        EatRat(Rat){
+            console.log("eatRat");
+            if (Rat.status == "song"){
+                this.kg += Rat.kg;
+                Rat.status = "Chet";
+                console.log("Ăn thịt chuột tăng lên" + this.kg +"kilogam")
+            }else {
+                console.log("Chuột chết rồi ăn ko đc")
+            }
+        }
+    }
+    let ratoj = new Rat("jery",5,10,"chet");
+    let catoj = new Cat("tom",10,15);
+    console.log(ratoj);
+    console.log(catoj);
+    ratoj.Generate();
+    catoj.Generate();
+    catoj.CatchRat(ratoj);
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let num1 = prompt("Nhập vào chuổi 1") ;
+    // let num2 = prompt("Nhập vào chuỗi 2") ;
+    // if (num1 == num2){
+    //     alert("Hai chuỗi vừa nhập giống nhau") ;
+    // } else {
+    //     alert("Hai chuỗi vừa nhập khác nhau");
+    // }
+
+    let num1 = prompt("Nhap vao chuoi 1");
+    let num2 = prompt("Nhap vao chuoi 2");
+    let check = true;
+
+    for (let i = 0 ; i<num1.length;i++){
+        if (num1[i] !== num2[i]){
+            check = false;
+            break;
+        }
+    }
+    if (check){
+        document.write("Hai chuỗi giống nhau");
+    }else {
+        document.write("Hai chuỗi khác nhau");
+    }
+
+
+</script>
+
+</body>
+</html>

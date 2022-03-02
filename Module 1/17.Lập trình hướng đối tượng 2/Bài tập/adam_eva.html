@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple{
+        constructor(kg) {
+            this.kg = kg;
+        }
+        tieuhao(){
+             return this.kg --;
+        }
+        check(){
+            return this.kg;
+        }
+
+    }
+    class Human{
+        constructor(name,gender,kg) {
+            this.name = name;
+            this.gender = gender;
+            this.kg = kg;
+        }
+        growl(){
+            console.log("Thèm táo quá mlem mlem")
+        }
+        eatapple(apple){
+            if (this.kg > 0){
+                this.kg ++;
+                apple.tieuhao();
+                console.log("Tao ngon qua tang len  :" +this.kg +"Kg" );
+            }else {
+                console.log("Tao fake ăn ko đc");
+            }
+
+        }
+
+    }
+    let tao = new Apple(10);
+    let human = new  Human("thuan","nam",10);
+    console.log(tao);
+    console.log(human);
+    human.eatapple(tao);
+    tao.check();
+</script>
+</body>
+</html>

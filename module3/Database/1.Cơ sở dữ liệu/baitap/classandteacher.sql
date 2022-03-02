@@ -1,0 +1,17 @@
+-- create database student_management;
+-- create table student_management.class (
+-- id int ,
+-- name varchar(255)
+-- );
+-- select * from student_management.class;
+-- insert into student_management.class values (1,"Pham Duy Thuận"),(2,"Đoàn Thị Hoàng Tuyên");
+-- select * from student_management.class;
+-- create table student_management.teacher (
+-- id int,
+-- name varchar(255),
+-- age int ,
+-- country varchar(255)
+-- );
+-- select * from student_management.teacher;
+-- insert into student_management.teacher values (1,"Phạm Duy Thuận",18,"Việt Nam"),(2,"Lương Duy Bảo",27,"Nhật Bản"),(3,"Lê Thị Linh",29,"Singapo");
+select * from student_management.teacher;

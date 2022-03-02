@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function giai_thua(number) {
+        count = 1;
+        if (number == 0 || number ==1){
+            return count;
+        }else {
+            for (let i = 2; i<=number ;i++){
+                count *= i;
+            }
+        }return  count;
+
+    }
+    let num1 = parseInt(prompt("Nhập vào một số từ người dùng"));
+    result = giai_thua(num1);
+    document.write("Giai thừa số vừa nhập là :" +result);
+</script>
+</body>
+</html>

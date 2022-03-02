@@ -1,0 +1,8 @@
+BEGIN 
+Input a = diemtoan;
+Input b = diemli;
+Input c = diemhoa;
+Input d = diemtrungbinh;
+d = (a + b + c) / 3
+Display " d "
+END

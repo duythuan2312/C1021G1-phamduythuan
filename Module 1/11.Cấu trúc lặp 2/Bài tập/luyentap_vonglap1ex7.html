@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let retunr = " ";
+    for (let i = 1; i <= 100; i++){
+        if (i % 3 !== 0 && i % 5 !== 0){
+            retunr = i + "<br>";
+        }
+
+        if (i % 3 == 0){
+            if (i % 5 == 0){
+                retunr = "FizzBuzz" + "<br>";
+            }else {
+                retunr = "Fizz" + "<br>";
+            }
+        }else if(i % 5 == 0){
+            retunr = "Buzz" + "<br>";
+        }
+        document.write(retunr);
+    }
+
+</script>
+</body>
+</html>

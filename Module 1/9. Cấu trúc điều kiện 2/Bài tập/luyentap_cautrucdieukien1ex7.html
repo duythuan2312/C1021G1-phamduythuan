@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*phí bắt buộc là 25 nghìn
+    600VND cho mỗi gọi của 50 phút trở đi
+    400VND cho mỗi gọi của 150 phút tiếp theo
+    200VND cho bất kì mỗi phút nào sau 200 phút đầu tiên
+     */
+
+    let sophut = parseInt(prompt("Số phút gọi"));
+    let batbuoc = 25000;
+    if( sophut <= 50 ){
+         tiencuoc = batbuoc+(sophut * 600);
+        alert("Tiền cước phải trả là " + tiencuoc);
+    }else if(sophut <= 150){
+        tiencuoc = batbuoc+(50 * 600) +((sophut -50) *400);
+        alert("Tiền cước phải trả là " + tiencuoc);
+    }else if(sophut <= 200){
+         tiencuoc = batbuoc + (50*600) +((sophut -50) *200);
+        alert("Tiền cước phải trả là " + tiencuoc);
+    }else {
+        alert("Tiền cước"+ VND);
+    }
+</script>
+</body>
+</html>

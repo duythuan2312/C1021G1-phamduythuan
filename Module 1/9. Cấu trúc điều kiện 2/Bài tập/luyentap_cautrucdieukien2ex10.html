@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let kwh = parseInt(prompt("Nhập kw điện "));
+ if (kwh <= 50){
+     tiendien = kwh * 1.549;
+ }else if(kwh<=100){
+     tiendien = (50 * 1.549) +(kwh -50)*1.6;
+ }else if (kwh <= 200){
+     tiendien = (50*1.549)+(50*1.6)+(kwh -100)*1.858;
+ }else if( kwh <= 300){
+     tiendien= (50*1.549)+(50*1.6)+(100*1.858)+(kwh-200)*2.340;
+ }else if(kwh <= 400) {
+     tiendien = (50 * 1.549) + (50 * 1.6) + (100 * 1.858) + (100 * 2.340) + (kwh - 300) * 2.615;
+ }else  {
+     tiendien =  (50 * 1.549) + (50 * 1.6) + (100 * 1.858) + (100 * 2.340) + (100*2.615)+(kwh - 400) * 2.701;
+ }
+ alert("Số tiền phải trả là : " + tiendien);
+</script>
+</body>
+</html>

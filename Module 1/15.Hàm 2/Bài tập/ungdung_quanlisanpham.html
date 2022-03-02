@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Add product</h3>
+<input type="text" id="name">
+<button onclick="add()">Add</button>
+<table id="product">
+    <tr>
+        <th>Product Name</th>
+        <th>Action</th>
+    </tr>
+</table>
+<script>
+    let products = ["Maytinh", "Dienthoai", "Maygiat"];
+
+    function data_prodoct() {
+        let product = `
+         <tr>
+          <th>Product Name</th>
+          <th>Action</th>
+      </tr>`;
+        for (let i = 0; i < products.length; i++) {
+            product += `
+    <tr>
+        <td>${products[i]}</td>
+        <td>
+        <button style="background-color: chartreuse" onclick="edit">Edit</button>
+        <button style="background-color: chartreuse"onclick="delete">Delete</button>
+      </td>
+</tr>`
+            ;
+        }
+        document.getElementById("product").innerHTML = product;
+    }
+
+    data_prodoct();
+
+    function add() {
+        let name = document.getElementById("name").value;
+        products.push(name);
+        data_prodoct();
+
+    }
+
+</script>
+</body>
+</html>

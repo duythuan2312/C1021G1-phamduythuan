@@ -1,0 +1,76 @@
+-----------------------------------list.jsp-------------------------------------------------
+ <td>   <form action="/employee?action=search" method="post">
+            <input type="text" name="name">
+            <input type="submit" value="Search">
+        </form></td>
+--------------------------------------SEVELERT--------------------------------------------		
+		
+		  private void search(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("name");
+        List<Employee> employeeList = employeeService.searchName(name);
+        request.setAttribute("employeeList",employeeList);
+        try {
+            request.getRequestDispatcher("employee/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+---------------------------------------Database-------------------------------------------------
+DELIMITER $$
+CREATE PROCEDURE search_name(IN employee_name_search varchar(50))
+BEGIN
+    SELECT * From employee where employee_name like employee_name_search;
+    END$$
+DELIMITER ;
+
+call search_name("%Đạt%");
+
+	----------------------------reponssitory-----------------------------------
+	    @Override
+    public List<Employee> searchName(String name) {
+        List<Employee> employeeList = new ArrayList<>();
+        String query = "{Call search_name(?)}";
+
+        CreateReponssitory createReponssitory = new CreateReponssitory();
+        Connection connection = createReponssitory.getConnection();
+
+        try {
+            CallableStatement callableStatement = connection.prepareCall(query);
+            callableStatement.setString(1,"%"+name+"%");
+            ResultSet resultSet = callableStatement.executeQuery();
+            Employee employee = new Employee();
+            while (resultSet.next()){
+                employee.setEmployeeId(resultSet.getInt("employee_id"));
+                employee.setEmployeeName(resultSet.getString("employee_name"));
+                employee.setEmployeeBirthday(resultSet.getString("employee_birthday"));
+                employee.setEmployeeIdCard(resultSet.getString("employee_id_card"));
+                employee.setSalary(resultSet.getDouble("employee_salary"));
+                employee.setPhone(resultSet.getString("employee_phone"));
+                employee.setEmail(resultSet.getString("employee_email"));
+                employee.setAddress(resultSet.getString("employee_address"));
+                employee.setPositioId(resultSet.getInt("position_id"));
+                employee.setEducationDegreeId(resultSet.getInt("education_degree_id"));
+                employee.setDivisionId(resultSet.getInt("division_id"));
+                employeeList.add(employee);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return employeeList;
+    }
+
+--------------------------Service----------------------------
+
+   List<Employee> searchName(String name);
+
+
+  @Override
+    public List<Employee> searchName(String name) {
+        List<Employee> search = employeeReponssitory.searchName(name);
+        return search;
+    }
+	

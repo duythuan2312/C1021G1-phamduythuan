@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [7,8,9,3,2,4,6,10,20];
+    let max = array[0];
+    let sum = array[0];
+    for (let i=1; i<array.length; i++) {
+        if (array[i] > max) {
+            max = array[i]
+        }
+        sum = sum + array[i]
+    }
+    document.write("Giá trị lớn nhất trong mảng là:"+ max +"<br>");
+    document.write("Giá trị trung bình các phần tử trong mảng là:"+ (sum/array.length));
+</script>
+</body>
+</html>

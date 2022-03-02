@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let language = prompt("Nhap tu can tim ");
+    let english = ["name","because","we","you","what"];
+    let vietnamese = ["Tên","Bởi vì","Chúng tôi","Bạn","Cái gì"];
+    let check = false;
+    let position;
+    for (let i=0;  i<english.length;  i++) {
+        if ( english[i] == language) {
+            check = true;
+            position = i;
+        }
+    }
+    if (check === true)
+        alert(vietnamese[position]);
+    else
+        alert("Không tìm thấy!");
+
+
+
+</script>
+</body>
+</html>

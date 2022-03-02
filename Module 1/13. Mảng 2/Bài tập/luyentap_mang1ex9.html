@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   let array1 = [];
+   for (let i=1 ; i<=10 ; i++){
+       let num1 = parseInt(prompt("Nhập vào array 1 trị trí :" +i));
+       array1[i] = num1;
+   }
+   let array2 = [];
+   for (let i=1 ; i<=10 ; i++){
+       let num2 = parseInt(prompt("Nhập vào array 2 trị trí :" +i));
+       array2[i] = num2;
+   }
+   let array3 = [];
+   array3 = array1.concat(array2);
+   document.write(array3);
+
+
+</script>
+</body>
+</html>

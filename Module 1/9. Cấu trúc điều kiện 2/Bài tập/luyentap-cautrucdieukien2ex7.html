@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập số a"));
+    let b = parseInt(prompt("Nhập số b"));
+    let c = parseInt(prompt("Nhập số c"));
+    delta = b*b -(4*a*c);
+    if(delta < 0){
+        alert("Phương trình vô nghiệm :");
+    }else if(delta == 0){
+       let x1 = x2 =(-b/2*a);
+        alert("Phương trình đã cho có nghiệm kép là x1 = x2 =:" +x1);
+
+    }else if(delta > 0){
+      let  x1 = ((-b) - Math.sqrt(delta))/(2*a);
+       let x2 =((-b) + Math.sqrt(delta))/(2*a);
+       alert("Phương trình đã cho có  nghiệm là x1=:" + x1);
+       alert("Phương trình đã cho có nghiệm là x2=" + x2);
+    }else {
+        alert("Phương trình sai rồi");
+    }
+</script>
+
+
+</body>
+</html>

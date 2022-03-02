@@ -1,0 +1,5 @@
+BEGIN
+Input tienUSD = USD
+tienVND  = ( tienUSD  * 23000VND )
+Display"tienVND "
+END

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Chơi" id="doanso" onclick="game()" >
+<script>
+    function game() {
+        let number = parseInt(prompt("Nhập khoảng  số "));
+        let randum = Math.floor(Math.random()*number);
+        let doan = parseInt(prompt("Đoán số "));
+        if(doan == randum ){
+        alert("Dự đoán đúng");
+
+        }else {
+            while (doan != randum){
+                if(doan < randum){
+                doan = parseInt(prompt("Nhở hơn ,đoán lại đi" ));
+                }else {
+                doan = parseInt(prompt("Lớn hơn ,đoán lại đi   " ));
+                }
+
+            }
+            alert("Dự đoán đúng ");
+     }
+
+
+
+
+
+    }
+</script>
+</body>
+</html>

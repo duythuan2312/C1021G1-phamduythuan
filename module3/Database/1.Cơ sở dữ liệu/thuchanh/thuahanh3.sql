@@ -1,0 +1,10 @@
+-- create table student_management.student (
+-- id int,
+-- name varchar(255),
+-- age int ,
+-- country varchar(255),
+-- primary key (`id`)
+-- );
+-- select * from student_management.student;
+-- insert into student_management.student values (1,"Đặng Duy Linh" ,19,"Việt Nam"),(2,"Nguyễn Anh Hoàng",26,"Nhật bản");
+-- select * from student_management.student;

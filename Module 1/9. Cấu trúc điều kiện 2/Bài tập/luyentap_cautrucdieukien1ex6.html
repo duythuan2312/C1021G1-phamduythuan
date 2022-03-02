@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*doanh so tren 100.000.000 hoa hồng là 10%
+doanh số từ 50.000.000-100.000.000 hoa hồng là 8%
+doanh số dưới 50.000.000 hoa hồng là 5%
+ */
+    let sale = parseInt(prompt("Nhập doanh số tháng này "));
+     if (sale > 100000000){
+         let hoahong = sale * 0.1;
+         alert("Hoa hồng nhận được là " + hoahong);
+     }else if(sale > 50000000){
+         let hoahong = sale * 0.08;
+         alert("Hoa hồng nhận được là" + hoahong);
+     }else {
+         let hoahong = sale * 0.05;
+         alert("Hoa hồng nhận được là " + hoahong);
+     }
+</script>
+</body>
+</html>

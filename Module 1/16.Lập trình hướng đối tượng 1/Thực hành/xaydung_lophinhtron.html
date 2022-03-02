@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="name" onclick="hinhtron" width="1000" height="1000"></canvas>
+<script>
+    let Circle = function(radius) {
+
+        this.radius = radius;
+        this.getRadius = function() {
+            return radius;
+        }
+        this.getArea = function() {
+            return Math.PI * radius * radius;
+        }
+
+    };
+
+    let circle = new Circle(100);
+    let radius = circle.getRadius();
+    let area = circle.getArea();
+    alert("radius: " + radius + "; area: " + area);
+
+    let html = document.getElementById("name");
+    let canvas = html.getContext("2d");
+    canvas.arc(400,200,radius,0,2 *Math.PI);
+    canvas.stroke();
+    canvas.fillStyle="pink";
+    canvas.fill();
+
+
+</script>
+</body>
+</html>

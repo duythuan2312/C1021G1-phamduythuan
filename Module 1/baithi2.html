@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    // Viết hàm cho phép nhập vào một số nguyên dương, kiểm tra xem số vừa nhập đó có phải là số hoàn hảo hay không.
+    //     Chương trình sẽ trả về true nếu số đó là số hoàn hảo và false nếu không phải là số hoàn hảo
+    function Kiemtra(number) {
+        let sum = 0;
+        for (let i = 0; i < number; i++) {
+            if (number % i === 0) {
+                sum = sum + i;
+            }
+        }if (sum === number) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    let number = parseInt(prompt("Nhập vào một số nguyên dương :"));
+    let result = Kiemtra(number);
+    alert("Kiểm tra số hoàn hảo :" + result);
+
+</script>
+</body>
+</html>
