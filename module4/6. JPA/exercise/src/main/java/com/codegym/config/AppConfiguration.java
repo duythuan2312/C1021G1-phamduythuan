@@ -4,6 +4,10 @@ package com.codegym.config;
 //import com.codegym.repository.impl.BlogRepositoryImpl;
 //import com.codegym.service.IBlogService;
 //import com.codegym.service.impl.BlogServiceImpl;
+import com.codegym.repository.BlogRepositoryImpl;
+import com.codegym.repository.IBlogRepository;
+import com.codegym.service.BlogServiceImpl;
+import com.codegym.service.IBlogService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -100,7 +104,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
         dataSource.setUrl("jdbc:mysql://localhost:3306/blog?createDatabaseIfNotExist=true&useSSL=false");
         dataSource.setUsername("root");
-        dataSource.setPassword("LinhVik230893");
+        dataSource.setPassword("0702509243");
         return dataSource;
     }
 
@@ -126,14 +130,12 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         registry.addResourceHandler("/js/**").addResourceLocations("WEB-INF/js/");
         registry.addResourceHandler("/img/**").addResourceLocations("WEB-INF/img/");
     }
+    public IBlogRepository iBlogRepository(){
+        return new BlogRepositoryImpl();
+    }
+    public IBlogService iBlogService(){
+        return new BlogServiceImpl();
+    }
 
-//    @Bean
-//    public IBlogRepository iBlogRepository () {
-//        return new BlogRepositoryImpl();
-//    }
-//
-//    @Bean
-//    public IBlogService iBlogService () {
-//        return new BlogServiceImpl();
-//    }
+
 }
