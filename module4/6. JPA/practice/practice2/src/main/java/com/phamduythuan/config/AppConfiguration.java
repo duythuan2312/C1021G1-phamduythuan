@@ -1,5 +1,9 @@
 package com.phamduythuan.config;
 
+import com.phamduythuan.repository.CustomerRepository;
+import com.phamduythuan.repository.ICustomerRepository;
+import com.phamduythuan.service.CustomerService;
+import com.phamduythuan.service.ICustomerService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -94,7 +98,7 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/entity_manager?createDatabaseIfNotExist=true&useSSL=false");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/customer_demo?createDatabaseIfNotExist=true&useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("0702509243");
         return dataSource;
@@ -121,5 +125,15 @@ public class AppConfiguration extends WebMvcConfigurerAdapter implements Applica
         registry.addResourceHandler("/css/**").addResourceLocations("WEB-INF/css/");
         registry.addResourceHandler("/js/**").addResourceLocations("WEB-INF/js/");
         registry.addResourceHandler("/img/**").addResourceLocations("WEB-INF/img/");
+    }
+
+    @Bean
+    public ICustomerRepository customerRepository() {
+        return new CustomerRepository();
+    }
+
+    @Bean
+    public ICustomerService customerService() {
+        return new CustomerService();
     }
 }
