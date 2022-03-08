@@ -17,11 +17,6 @@ public class CustomerServiceImpl implements CustomerService {
 
 
     @Override
-    public List<Customer> findAll() {
-        return (List<Customer>) iCustomerRepository.findAll();
-    }
-
-    @Override
     public Optional<Customer> findById(Long id) {
         return iCustomerRepository.findById(id);
     }
@@ -40,5 +35,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public Page<Customer> finAll(Pageable pageable) {
         return iCustomerRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Customer> findByName(Pageable pageable,String name) {
+        return iCustomerRepository.findAllByNameContaining(name, pageable);
     }
 }

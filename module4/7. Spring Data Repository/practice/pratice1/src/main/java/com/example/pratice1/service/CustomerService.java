@@ -8,12 +8,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface CustomerService {
-    List<Customer> findAll();
-
     Optional<Customer> findById(Long id);
-
     void save(Customer customer);
-
     void remove(Long id);
     Page<Customer> finAll(Pageable pageable);
+    Page<Customer> findByName(Pageable pageable,String name);
 }

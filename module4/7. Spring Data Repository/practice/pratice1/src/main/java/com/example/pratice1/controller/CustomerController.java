@@ -5,6 +5,7 @@ import com.example.pratice1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,8 +20,7 @@ public class CustomerController {
 
 
     @GetMapping("/list")
-    public ModelAndView showList(Pageable pageable){
-//        ModelAndView modelAndView = new ModelAndView("list","customerList",customerService.findAll());
+    public ModelAndView showList(@PageableDefault(value = 5) Pageable pageable){
        Page<Customer> customerPage = customerService.finAll(pageable);
        ModelAndView modelAndView = new ModelAndView("list");
        modelAndView.addObject("customerList",customerPage);
@@ -68,6 +68,13 @@ public class CustomerController {
     public String remove(@PathVariable Long id){
         customerService.remove(id);
         return "redirect:/list";
+    }
+    @GetMapping("/search")
+    public ModelAndView searhCustomer(@PageableDefault(value = 5) Pageable pageable,@RequestParam String nameCustomer){
+        ModelAndView modelAndView = new ModelAndView("list");
+        modelAndView.addObject("customerList",customerService.findByName(pageable,nameCustomer));
+        return modelAndView;
+
     }
 
 
