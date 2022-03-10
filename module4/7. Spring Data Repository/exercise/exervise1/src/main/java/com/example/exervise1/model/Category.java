@@ -31,4 +31,12 @@ public class Category {
     public void setNameCategory(String nameCategory) {
         this.nameCategory = nameCategory;
     }
+
+    public Set<Blog> getBlog() {
+        return blog;
+    }
+
+    public void setBlog(Set<Blog> blog) {
+        this.blog = blog;
+    }
 }
