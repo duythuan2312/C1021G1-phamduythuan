@@ -54,7 +54,7 @@ public class BlogController {
     public ModelAndView showEditForm(@PathVariable int id) {
             Blog blogList =  iBlogService.findById(id);
             ModelAndView modelAndView = new ModelAndView("edit");
-        modelAndView.addObject("categoryList",iCategoryService.findAll());
+          modelAndView.addObject("categoryList",iCategoryService.findAll());
             modelAndView.addObject("blog", blogList);
             return modelAndView;
     }

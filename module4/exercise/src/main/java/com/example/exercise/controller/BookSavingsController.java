@@ -53,13 +53,16 @@ public class BookSavingsController {
         modelAndView.addObject("list",iBookSavingService.findAll(pageable));
         return modelAndView;
     }
+
+
     @GetMapping("/delete")
     public String delete(BookSavings bookSavings, RedirectAttributes redirectAttributes, @RequestParam int id){
         System.out.println(id);
         iBookSavingService.delete(bookSavings);
         redirectAttributes.addFlashAttribute("message","Xóa Thành Công");
         return "redirect:/list";
-
     }
+
+
 
 }
