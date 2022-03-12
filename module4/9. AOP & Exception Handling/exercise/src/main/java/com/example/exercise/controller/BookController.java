@@ -1,6 +1,7 @@
 package com.example.exercise.controller;
 
 import com.example.exercise.model.Book;
+import com.example.exercise.model.BookCode;
 import com.example.exercise.service.IBookCodeService;
 import com.example.exercise.service.IBookServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,19 +46,24 @@ public class BookController {
         Optional<Book> book = iBookServiceRepository.findById(id);
         ModelAndView modelAndView = new ModelAndView("book");
         modelAndView.addObject("bookcode",iBookCodeService.findAll());
-        if (book.isPresent()) {
-            modelAndView.addObject("book", book.get());
+        modelAndView.addObject("book", book.get());
             return modelAndView;
-        }else {
-            return new ModelAndView("error");
-        }
+
 
 
     }
     @PostMapping("/detils")
     public String detils(@ModelAttribute Book book, RedirectAttributes redirectAttributes){
-
-        return "quantity";
+    BookCode bookCode = new BookCode();
+    if (book.getBookNumber() <= bookCode.getQuantityBook() && bookCode.getQuantityBook() > 0){
+        book.setBookNumber(book.getBookNumber() - bookCode.getQuantityBook());
+        iBookServiceRepository.save(book);
+        redirectAttributes.addFlashAttribute("sucsser","Mã mượn sách của bạn là"+bookCode.getBookCode());
+       return "list";
+    }else {
+        redirectAttributes.addFlashAttribute("message","Số sách vượt quá tối đa cho phép");
+        return "book";
+    }
 
     }
 

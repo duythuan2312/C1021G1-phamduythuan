@@ -10,12 +10,11 @@
     <div class="container">
        <center>
            <h2 style="color: orangered">Thông tin sách</h2>
+           <h3 th:text="${message}"></h3>
        </center>
     
            <form th:action="@{/detils}" th:object="${book}" method="post">
                <input type="hidden" name="id" th:field="*{id}" >
-               <div class="col-12">
-                  <div class="col-7">
                       <table class="table">
                           <tr>
                               <td>Tiêu Đề:</td>
@@ -37,21 +36,15 @@
                               <td>Số Lượng Sách</td>
                               <td><input type="text" readonly th:field="*{bookNumber}"/></td>
                           </tr>
-
-<!--                          <tr>-->
-<!--                              <td><input type="number" placeholder="Số lượng sách mà bạn muốn mượn" name="quantity" th:field="*{bookCode.quantityBook}"></td>-->
-<!--                          </tr>-->
                           <tr>
-                              <td><button type="submit" value="Mượn Sách" data-bs-toggle="modal" data-bs-target="#exampleModal" th:onclick="'javascript:submit(' + ${book.id} + ')'">Mượn Sách</button></td>
+                              <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" th:onclick="'javascript:submitandbook(' + ${book.id} + ')'">Mượn Sách</button></td>
                           </tr>
                       </table>
-                  </div>
-                   <div class="col-3">
+
                        <tr>
-                           <td><img src="https://static.tuoitre.vn/tto/i/s626/2014/03/03/OhRVpBSc.jpg" alt="" width="100%" height="30%"></td>
+                           <td>Số lượng Sách Muốn Mượn</td>
+                           <td><input type="number" name="sl" th:object="${bookcode}"></td>
                        </tr>
-                   </div>
-               </div>
 
 
               
@@ -60,7 +53,7 @@
                    <div class="modal-dialog">
                        <div class="modal-content">
                            <div class="modal-header">
-                               <h5 class="modal-title" id="exampleModalLabel" >Modal title</h5>
+                               <h5 class="modal-title" id="exampleModalLabel" >Xác Nhận</h5>
                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                            </div>
                            <div class="modal-body" style="color: red">
@@ -77,7 +70,7 @@
                    </div>
                </div>
                <script>
-                   function submit(id) {
+                   function submitandbook(id) {
                        document.getElementById("id-customer").value = id;
                    }
                </script>
