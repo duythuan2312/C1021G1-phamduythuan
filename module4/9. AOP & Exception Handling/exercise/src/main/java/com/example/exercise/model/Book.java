@@ -67,4 +67,12 @@ public class Book {
     public void setYearProducer(String yearProducer) {
         this.yearProducer = yearProducer;
     }
+
+    public BookCode getBookCode() {
+        return bookCode;
+    }
+
+    public void setBookCode(BookCode bookCode) {
+        this.bookCode = bookCode;
+    }
 }

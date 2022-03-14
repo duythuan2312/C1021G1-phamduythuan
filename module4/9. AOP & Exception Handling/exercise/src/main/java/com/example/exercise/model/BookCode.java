@@ -47,4 +47,5 @@ public class BookCode {
     public void setBookCode(String bookCode) {
         this.bookCode = bookCode;
     }
+
 }

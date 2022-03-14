@@ -28,9 +28,7 @@
             </thead>
             <tbody>
             <tr th:each="book : ${list}">
-                <td>
-                    <img src="https://static.tuoitre.vn/tto/i/s626/2014/03/03/OhRVpBSc.jpg" alt="" width="5%" height="5%">
-                </td>
+                <td th:text="${book.id}"></td>
                 <td th:text="${book.tile}"></td>
                 <td th:text="${book.author}"></td>
                 <td th:text="${book.producer}"></td>

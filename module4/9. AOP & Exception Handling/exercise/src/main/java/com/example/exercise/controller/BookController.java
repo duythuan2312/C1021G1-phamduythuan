@@ -53,13 +53,12 @@ public class BookController {
 
     }
     @PostMapping("/detils")
-    public String detils(@ModelAttribute Book book, RedirectAttributes redirectAttributes){
-    BookCode bookCode = new BookCode();
-    if (book.getBookNumber() <= bookCode.getQuantityBook() && bookCode.getQuantityBook() > 0){
-        book.setBookNumber(book.getBookNumber() - bookCode.getQuantityBook());
+    public String detils(@ModelAttribute Book book,RedirectAttributes redirectAttributes){
+    if (book.getBookNumber() <= book.getBookCode().getQuantityBook() && book.getBookCode().getQuantityBook() > 0){
+        book.setBookNumber(book.getBookNumber() - book.getBookCode().getQuantityBook());
         iBookServiceRepository.save(book);
-        redirectAttributes.addFlashAttribute("sucsser","Mã mượn sách của bạn là"+bookCode.getBookCode());
-       return "list";
+        redirectAttributes.addFlashAttribute("sucsser","Mã mượn sách của bạn là"+book.getBookCode().getBookCode());
+       return "redirect:/list";
     }else {
         redirectAttributes.addFlashAttribute("message","Số sách vượt quá tối đa cho phép");
         return "book";

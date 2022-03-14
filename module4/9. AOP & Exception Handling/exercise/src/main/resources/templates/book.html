@@ -43,7 +43,7 @@
 
                        <tr>
                            <td>Số lượng Sách Muốn Mượn</td>
-                           <td><input type="number" name="sl" th:object="${bookcode}"></td>
+                           <td><input type="number" name="soluong" th:object="${bookcode}"></td>
                        </tr>
 
 
@@ -59,13 +59,15 @@
                            <div class="modal-body" style="color: red">
                                Bạn có muốn mượn sách này hay không?
                            </div>
-                           <form  id="form-delete" method="post" action="/detils">
+
                                <div class="modal-footer">
+                                   <form th:action="@{/detils}" th:object="${book}" method="post">
                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                   <button type="submit" class="btn btn-primary">OK</button>
+                                   <button type="submit" class="btn btn-primary" th >OK</button>
+                                       </form>
                                </div>
                                <input type="hidden" name="id" id="id-customer">
-                           </form>
+
                        </div>
                    </div>
                </div>
