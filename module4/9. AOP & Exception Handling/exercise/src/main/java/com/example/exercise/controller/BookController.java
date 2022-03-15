@@ -53,9 +53,10 @@ public class BookController {
 
     }
     @PostMapping("/detils")
-    public String detils(@ModelAttribute Book book,RedirectAttributes redirectAttributes){
+    public String detils(@ModelAttribute Book book,@RequestParam String soluong,RedirectAttributes redirectAttributes){
+        Integer quantity = Integer.parseInt(soluong);
     if (book.getBookNumber() <= book.getBookCode().getQuantityBook() && book.getBookCode().getQuantityBook() > 0){
-        book.setBookNumber(book.getBookNumber() - book.getBookCode().getQuantityBook());
+        book.setBookNumber(book.getBookNumber() -quantity);
         iBookServiceRepository.save(book);
         redirectAttributes.addFlashAttribute("sucsser","Mã mượn sách của bạn là"+book.getBookCode().getBookCode());
        return "redirect:/list";

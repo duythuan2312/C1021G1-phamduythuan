@@ -41,7 +41,7 @@ public class ProductController {
         modelAndView.addObject("products", productService.findAll());
         return modelAndView;
     }
-    @GetMapping("/shop/{id}")
+    @GetMapping("/view/{id}")
     public ModelAndView showDetail(@PathVariable Long id, HttpServletResponse response){
         Cookie cookie = new Cookie("products",id+"");
         cookie.setMaxAge(60*60*24*1);

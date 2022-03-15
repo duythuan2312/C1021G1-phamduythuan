@@ -13,7 +13,7 @@
            <h3 th:text="${message}"></h3>
        </center>
     
-           <form th:action="@{/detils}" th:object="${book}" method="post">
+           <form th:action="@{/detils}" th:object="${book}" method="post" id="form">
                <input type="hidden" name="id" th:field="*{id}" >
                       <table class="table">
                           <tr>
@@ -39,12 +39,13 @@
                           <tr>
                               <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" th:onclick="'javascript:submitandbook(' + ${book.id} + ')'">Mượn Sách</button></td>
                           </tr>
+                          <tr>
+                              <td>Số lượng Sách Muốn Mượn</td>
+                              <td><input type="number" name="soluong"></td>
+                          </tr>
                       </table>
+           </form>
 
-                       <tr>
-                           <td>Số lượng Sách Muốn Mượn</td>
-                           <td><input type="number" name="soluong" th:object="${bookcode}"></td>
-                       </tr>
 
 
               
@@ -61,10 +62,10 @@
                            </div>
 
                                <div class="modal-footer">
-                                   <form th:action="@{/detils}" th:object="${book}" method="post">
-                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                   <button type="submit" class="btn btn-primary" th >OK</button>
-                                       </form>
+
+                                   <a  class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+                                   <a  class="btn btn-primary" onclick=submit() >OK</a>
+
                                </div>
                                <input type="hidden" name="id" id="id-customer">
 
@@ -75,8 +76,12 @@
                    function submitandbook(id) {
                        document.getElementById("id-customer").value = id;
                    }
+                   function submit(){
+                       let element = document.getElementById("form")
+                       element.submit();
+                   }
                </script>
-           </form>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
