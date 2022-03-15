@@ -5,11 +5,10 @@ import com.example.exercise.model.Category;
 import com.example.exercise.repository.IBlogRepository;
 import com.example.exercise.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BlogServiceImpl implements IBlogService{
@@ -19,20 +18,18 @@ public class BlogServiceImpl implements IBlogService{
     private ICategoryRepository iCategoryRepository;
 
     @Override
-    public Page<Blog> findAll(Pageable pageable) {
-        return iBlogRepository.findAll(pageable) ;
+    public List<Blog> findAll() {
+        return (List<Blog>) iBlogRepository.findAll();
     }
 
     @Override
     public void save(Blog blog) {
-        Category category = iCategoryRepository.findById(blog.getCategory().getId()).orElse(null);
-        blog.setCategory(category);
         iBlogRepository.save(blog);
     }
 
     @Override
-    public Blog findById(int id) {
-        return iBlogRepository.findById(id).get();
+    public Optional<Blog> findById(Long id) {
+        return iBlogRepository.findById(id);
     }
 
     @Override

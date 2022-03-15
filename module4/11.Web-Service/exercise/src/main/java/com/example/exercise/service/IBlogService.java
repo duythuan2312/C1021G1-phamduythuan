@@ -1,15 +1,14 @@
 package com.example.exercise.service;
 
 import com.example.exercise.model.Blog;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IBlogService  {
-    Page<Blog> findAll(Pageable pageable);
+    List<Blog> findAll();
     void save(Blog blog);
-    Blog findById(int id);
+    Optional<Blog> findById(Long id);
     List<Blog> searchByName(String name);
     void remove(Blog blog);
 }

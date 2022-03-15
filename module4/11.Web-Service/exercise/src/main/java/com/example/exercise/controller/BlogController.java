@@ -1,5 +1,6 @@
 package com.example.exercise.controller;
 
+import com.example.exercise.model.Category;
 import com.example.exercise.service.ICategoryService;
 import com.example.exercise.model.Blog;
 import com.example.exercise.service.IBlogService;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -25,52 +28,53 @@ public class BlogController {
     private IBlogService iBlogService;
 
     @GetMapping("/blog")
-    public ResponseEntity<Page<Blog>> showBlog(@PageableDefault(value = 3)Pageable pageable){
-        Page<Blog> blogPage = iBlogService.findAll(pageable);
+    public ResponseEntity<List<Blog>> showBlog(){
+        List<Blog> blogPage = iBlogService.findAll();
         if (blogPage.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }else {
             return new ResponseEntity<>(HttpStatus.OK);
         }
-
     }
 
-    @GetMapping("/create")
-    public ModelAndView showCreate(){
-        ModelAndView modelAndView = new ModelAndView("create");
-        modelAndView.addObject("blogList",new Blog());
-        modelAndView.addObject("categoryList",iCategoryService.findAll());
-        return modelAndView;
+    @GetMapping("/category")
+    public ResponseEntity<List<Category>> showCategory(){
+        List<Category> categoryList = iCategoryService.findAll();
+        if (categoryList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }else {
+            return new ResponseEntity<>(HttpStatus.OK);
+        }
     }
 
-
-    @PostMapping("/blog")
-    public String create(@ModelAttribute Blog blogList, RedirectAttributes redirectAttributes) {
-          iBlogService.save(blogList);
-          redirectAttributes.addFlashAttribute("messages","Thêm Mới Thành Công");
-        return "redirect:/blog";
-    }
-    @GetMapping("/delete/{id}")
-    public String remove(Blog blog,RedirectAttributes redirectAttributes) {
-        iBlogService.remove(blog);
-        redirectAttributes.addFlashAttribute("remove", "Xóa Thành Công dữ liệu");
-        return "redirect:/blog";
-    }
-
-    @GetMapping("/edit/{id}")
-    public ModelAndView showEditForm(@PathVariable int id) {
-            Blog blogList =  iBlogService.findById(id);
-            ModelAndView modelAndView = new ModelAndView("edit");
-          modelAndView.addObject("categoryList",iCategoryService.findAll());
-            modelAndView.addObject("blog", blogList);
-            return modelAndView;
-    }
-
-    @PostMapping("/edit")
-    public String updateProvince(Blog blog) {
-        iBlogService.save(blog);
-        return "redirect:/blog";
-    }
+//
+//    @PostMapping("/blog")
+//    public String create(@ModelAttribute Blog blogList, RedirectAttributes redirectAttributes) {
+//          iBlogService.save(blogList);
+//          redirectAttributes.addFlashAttribute("messages","Thêm Mới Thành Công");
+//        return "redirect:/blog";
+//    }
+//    @GetMapping("/delete/{id}")
+//    public String remove(Blog blog,RedirectAttributes redirectAttributes) {
+//        iBlogService.remove(blog);
+//        redirectAttributes.addFlashAttribute("remove", "Xóa Thành Công dữ liệu");
+//        return "redirect:/blog";
+//    }
+//
+//    @GetMapping("/edit/{id}")
+//    public ModelAndView showEditForm(@PathVariable Long id) {
+//            Optional<Blog> blogList =  iBlogService.findById(id);
+//            ModelAndView modelAndView = new ModelAndView("edit");
+//          modelAndView.addObject("categoryList",iCategoryService.findAll());
+//            modelAndView.addObject("blog", blogList);
+//            return modelAndView;
+//    }
+//
+//    @PostMapping("/edit")
+//    public String updateProvince(Blog blog) {
+//        iBlogService.save(blog);
+//        return "redirect:/blog";
+//    }
 
 
 

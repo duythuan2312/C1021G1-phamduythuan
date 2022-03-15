@@ -3,7 +3,7 @@ package com.example.exercise.dto;
 import com.example.exercise.model.Category;
 
 public class BlogDto {
-    private int id;
+    private Long id;
     private String tile;
     private String body;
     private String summary;
@@ -13,7 +13,7 @@ public class BlogDto {
     public BlogDto() {
     }
 
-    public BlogDto(int id, String tile, String body, String summary, Category category) {
+    public BlogDto(Long id, String tile, String body, String summary, Category category) {
         this.id = id;
         this.tile = tile;
         this.body = body;
@@ -21,11 +21,11 @@ public class BlogDto {
         this.category = category;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

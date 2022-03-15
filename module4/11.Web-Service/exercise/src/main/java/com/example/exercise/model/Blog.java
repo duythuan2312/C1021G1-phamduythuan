@@ -1,12 +1,16 @@
 package com.example.exercise.model;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+import javax.persistence.*;
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 @Entity
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
     private String tile;
     private String body;
     private String summary;
@@ -25,11 +29,11 @@ public class Blog {
         this.category = category;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
