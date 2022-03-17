@@ -5,5 +5,4 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface ISmartphoneRepository extends CrudRepository<Smartphone,Long> {
-//    @Query("select *from smartphone limit 1,2 ",nativeQuery = true)
 }
