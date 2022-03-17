@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table class="table" border="1">
+    <div>
+        <h2 style="color: blue;text-align: center">Chức năng Search</h2>
+        <input type="text" id="inputSearch" autocomplete="off" placeholder="Search Summary">
+    </div>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Model</th>
+        <th>Price</th>
+        <a href=""></a>
+
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <button id="load">Tải Thêm</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let totalShow = 5;
+            let blogs = [];
+
+            function pushBlog(i) {
+                let tr = [];
+                tr.push("<tr>")
+                tr.push("<td>" + blogs[i].id + "</td>")
+                tr.push("<td>" + blogs[i].producer + "</td>")
+                tr.push("<td>" + blogs[i].model + "</td>")
+                tr.push("<td>" + blogs[i].price + "</td>")
+                tr.push("</tr>")
+                console.log(tr.join(''))
+                $('.table').append((tr.join('')));
+
+            }
+
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://localhost:8080/smartphones",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        blogs = data;
+                        for (let i = 0; i < 5; i++) {
+                            pushBlog(i);
+                        }
+                    }
+
+                })
+            })
+            $(document).ready(function () {
+               $("#load").click(function () {
+             totalShow +=5;
+                   pushBlog(totalShow - 5);
+                   pushBlog(totalShow - 4);
+                   pushBlog(totalShow - 3);
+                   pushBlog(totalShow - 2);
+                   pushBlog(totalShow - 1);
+
+               })
+
+            })
+
+        })
+
+
+
+        $(document).ready(function () {
+            $('.deleteSmartphone').click(function (event) {
+                let a = $(this);
+                let smartphoneId = a.attr("href");
+                $.ajax({
+                    type: "DELETE",
+                    //tên API
+                    url: `/smartphones/${smartphoneId}`,
+                    success: function (data) {
+                        a.parent().parent().remove();
+                    }
+
+                });
+                event.preventDefault();
+            });
+        })
+    </script>
+
+</body>
+</html>
