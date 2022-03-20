@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>  GeeksforGeeks icon</title>
+    <link rel = "icon" href =
+            "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png"
+          type = "image/x-icon">
+    <link rel="stylesheet" href="/assert/bootstrap413/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assert/datatables/css/dataTables.bootstrap4.min.css">
+</head>
+<body>
+<a href="/create">CREATE BLOG</a>
+<h2 style="color: #34ce57" th:text="${messages}"></h2>
+<h2 style="color: #34ce57" th:text="${remove}"></h2>
+<div class="container">
+    <h1>Manchecter City Blog</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tile</th>
+            <th>Body</th>
+            <th>Summary</th>
+            <th>Category</th>
+            <th>Update</th>
+            <th>Remove</th>
+        </tr>
+        <tr th:each="thuan : ${blogList}">
+            <td th:text="${thuan.id}"></td>
+            <td th:text="${thuan.tile}"></td>
+            <td th:text="${thuan.body}"></td>
+            <td th:text="${thuan.summary}"></td>
+            <td th:text="${thuan.category.nameCategory}"></td>
+            <td>
+                <a th:href="@{/edit/__${thuan.id}__}">Edit</a>
+            </td>
+            <td>
+                <a th:href="@{/delete/__${thuan.id}__}">Delete</a>
+            </td>
+
+        </tr>
+    </table>
+
+    <div>
+        <a th:href="@{'/blog'(page = ${blogList.number - 1})}"
+           th:if="${blogList.hasPrevious()}">Previous</a>
+        <span th:text="${blogList.number + 1}"></span>
+        / <span th:text="${blogList.totalPages}"></span>
+        <a th:href="@{'/blog'(page = ${blogList.number + 1})}"
+           th:if="${blogList.hasNext()}" class="btn-primary">Next</a>
+    </div>
+
+</div>
+
+<script src="/assert/jquery/jquery-3.5.1.min.js"></script>
+<script src="/assert/bootstrap413/js/popper.min.js"></script>
+<script src="/assert/datatables/js/jquery.dataTables.min.js"></script>
+<script src="/assert/datatables/js/dataTables.bootstrap4.min.js"></script>
+<script src="/assert/bootstrap413/js/bootstrap.min.js"></script>
+<script src="/assert/bootstrap413/js/bootstrap.bundle.js"></script>
+</body>
+</html>
