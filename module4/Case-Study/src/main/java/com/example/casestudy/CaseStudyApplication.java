@@ -11,6 +11,8 @@ public class CaseStudyApplication {
         SpringApplication.run(CaseStudyApplication.class, args);
                 BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         System.out.println(passwordEncoder.encode("123456"));
+        System.out.println(passwordEncoder.encode("0702509243"));
+        System.out.println(passwordEncoder.encode("phamduythuan123"));
     }
 
 }

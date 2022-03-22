@@ -6,11 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/url")
 public class PageController {
-    @GetMapping("/page")
+    @GetMapping("")
     public ModelAndView showPage(){
         ModelAndView modelAndView = new ModelAndView("page");
+        return modelAndView;
+    }
+
+
+    @GetMapping("/login")
+    public ModelAndView login(){
+        ModelAndView modelAndView = new ModelAndView("/login");
         return modelAndView;
     }
 
