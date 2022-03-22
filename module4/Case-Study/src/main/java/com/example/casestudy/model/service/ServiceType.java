@@ -12,9 +12,17 @@ public class ServiceType {
     private Long id;
     private String serviceTypeName;
 
-    @OneToMany(mappedBy = "serviceType")
+    @OneToMany(mappedBy = "serviceType",cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Service> services;
+
+    public ServiceType(Long id, String serviceTypeName, Set<Service> services) {
+        this.id = id;
+        this.serviceTypeName = serviceTypeName;
+        this.services = services;
+    }
+
+
 
     public ServiceType() {
     }

@@ -27,6 +27,28 @@ public class Service {
     @OneToMany(mappedBy = "service")
      private Set<Contract> contracts;
 
+    public Set<Contract> getContracts() {
+        return contracts;
+    }
+
+    public void setContracts(Set<Contract> contracts) {
+        this.contracts = contracts;
+    }
+
+    public Service(Long id, String serviceName, Integer area, double serviceCost, Integer serviceMaxPeople, String description, double poolArea, Integer numberOfFloors, ServiceType serviceType, RentType rentType, Set<Contract> contracts) {
+
+        this.id = id;
+        this.serviceName = serviceName;
+        this.area = area;
+        this.serviceCost = serviceCost;
+        this.serviceMaxPeople = serviceMaxPeople;
+        this.description = description;
+        this.poolArea = poolArea;
+        this.numberOfFloors = numberOfFloors;
+        this.serviceType = serviceType;
+        this.rentType = rentType;
+        this.contracts = contracts;
+    }
 
     public Service() {
     }

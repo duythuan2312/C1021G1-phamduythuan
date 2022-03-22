@@ -114,7 +114,6 @@ public class CustomerDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
       CustomerDto customerDto = (CustomerDto) target;
-
         if ("".equals(customerDto.getCustomerName())){
             errors.rejectValue("customerName","","Hãy Nhập Đúng Dữ Liệu VD:Phạm Duy Thuận");
         }

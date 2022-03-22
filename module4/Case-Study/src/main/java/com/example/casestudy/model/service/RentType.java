@@ -14,7 +14,7 @@ public class RentType {
     private String rentTypeName;
     private double rentTypeCost;
 
-    @OneToMany(mappedBy = "rentType")
+    @OneToMany(mappedBy = "rentType",cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Service> services;
 

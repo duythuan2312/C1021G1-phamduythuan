@@ -38,7 +38,6 @@ public class EmployController {
     public ModelAndView showEmployee(@PageableDefault(value = 5) Pageable pageable){
         ModelAndView modelAndView = new ModelAndView("employee/list");
         modelAndView.addObject("employeeList",employeeService.findAll(pageable));
-
         return modelAndView;
     }
     @GetMapping("/create")
