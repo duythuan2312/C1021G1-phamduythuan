@@ -28,8 +28,6 @@ public class Employee {
     @JoinColumn(name = "education_id",referencedColumnName = "id")
     private Education education;
     @OneToMany(mappedBy = "employee")
-
-
     private Set<Contract> contracts;
 
 

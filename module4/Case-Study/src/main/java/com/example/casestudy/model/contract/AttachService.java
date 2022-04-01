@@ -6,23 +6,23 @@ import java.util.Set;
 @Entity
 public class AttachService {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String attachServiceName;
     private double attachServiceCost;
-    private Integer attachServiceUnit;
+    private String attachServiceUnit;
     private String attachServiceStatus;
-    @OneToMany(mappedBy = "attachService")
+    @OneToMany(mappedBy = "attachService",cascade = CascadeType.ALL)
     private Set<ContracDetail> contracDetails;
 
     public AttachService() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,11 +42,11 @@ public class AttachService {
         this.attachServiceCost = attachServiceCost;
     }
 
-    public Integer getAttachServiceUnit() {
+    public String getAttachServiceUnit() {
         return attachServiceUnit;
     }
 
-    public void setAttachServiceUnit(Integer attachServiceUnit) {
+    public void setAttachServiceUnit(String attachServiceUnit) {
         this.attachServiceUnit = attachServiceUnit;
     }
 

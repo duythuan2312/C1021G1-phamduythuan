@@ -157,21 +157,5 @@ public class EmployeeDto implements Validator {
         if ("".equals(employeeDto.getAddress())){
             errors.rejectValue("address","","Nhập Đúng Dữ Liệu VD:Quảng Nam");
         }
-        if ("".equals(employeeDto.getPosition().getPositionName())){
-            errors.rejectValue("position","","Hãy Chọn Giá Trị ");
-        }
-        if ("".equals(employeeDto.getEducation().getEducationName())){
-            errors.rejectValue("education","","Hãy Chọn Giá Trị");
-        }
-        if ("".equals(employeeDto.getDivision().getDivisionName())){
-            errors.rejectValue("division","","Hãy Chọn Giá Trị");
-        }
-
-
-
-
-
-
-
     }
 }

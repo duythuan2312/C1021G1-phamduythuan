@@ -1,6 +1,9 @@
 package com.example.casestudy.model.customer;
 
+import com.example.casestudy.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 public class Customer {
@@ -15,8 +18,12 @@ public class Customer {
     private String email;
     private String address;
     @ManyToOne
-    @JoinColumn(name = "customertype_id" , referencedColumnName = "id")
+    @JoinColumn(name = "customertype_id", referencedColumnName = "id")
     private CustomerType customerType;
+
+
+    @OneToMany(mappedBy = "customer")
+    private Set<Contract> contracts;
 
     public Customer() {
     }

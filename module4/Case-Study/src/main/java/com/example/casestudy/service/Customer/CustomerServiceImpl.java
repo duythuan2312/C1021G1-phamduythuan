@@ -34,4 +34,9 @@ public class CustomerServiceImpl  implements CustomerService{
     public Optional<Customer> findByID(Long id) {
         return iCustomerRepository.findById(id);
     }
+
+    @Override
+    public Page<Customer> findByName(Pageable pageable, String name) {
+        return iCustomerRepository.findAllByCustomerNameContaining(name,pageable);
+    }
 }

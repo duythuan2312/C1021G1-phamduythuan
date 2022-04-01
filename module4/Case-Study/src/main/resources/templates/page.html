@@ -212,7 +212,7 @@
     </table>
         </div>
         <div class="col-sm-4">
-            <ul class="nav justify-content-center">
+            <ul class="nav justify-content-center position-fixed ">
                 <li class="nav-item">
                     <a class="nav-link" th:href="@{/employee}"><h5 style="color: white">Employee</h5></a>
                 </li>
@@ -223,7 +223,13 @@
                     <a class="nav-link" th:href="@{/service}"><h5 style="color: white">Service</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#"><h5 style="color: white">Contract</h5></a>
+                    <a class="nav-link" th:href="@{/contract}"><h5 style="color: white">Contract</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/shop}"><h5 style="color: white">Cuisine</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/service-vila-house-room}"><h5 style="color: white">Booking</h5></a>
                 </li>
             </ul>
         </div>
@@ -468,8 +474,8 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="footer">
-    <div class="container-fluid" style="background: aquamarine">
+<div class="footer" style="background: darkcyan">
+    <div class="container" >
         <div class="row">
             <div class="col-lg-4 col-light">
                 <h2 class="mb-1">Hướng Dẫn Di Chuyển</h2>
@@ -507,18 +513,18 @@
             <div class="col-lg-7 ml-lg-auto d-flex flex-column position-static">
                 <div class="row">
                     <div class="col-sm col-lg-5">
-                        <div id="nav_menu-1" class="footer-widget4  widget_nav_menu"><div class="menu-footer-menu-vi-container"><ul id="menu-footer-menu-vi" class="menu"><li id="menu-item-6855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6855"><a href="https://furamavietnam.com/vi/furama-resort-danang-rack-rate/">Giá Công Bố</a></li>
-                            <li id="menu-item-6854" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6854"><a href="https://furamavietnam.com/vi/lifestyle-blog/">Lifestyle Blog</a></li>
-                            <li id="menu-item-6856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6856"><a href="https://furamavietnam.com/vi/work-with-us/">Tuyển Dụng</a></li>
-                            <li id="menu-item-6857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6857"><a href="https://furamavietnam.com/vi/contact/">Liên Hệ</a></li>
+                        <div id="nav_menu-1" class="footer-widget4  widget_nav_menu"><div class="menu-footer-menu-vi-container"><ul id="menu-footer-menu-vi" class="menu"><li id="menu-item-6855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6855"><a  style="color: white" href="https://furamavietnam.com/vi/furama-resort-danang-rack-rate/">Giá Công Bố</a></li>
+                            <li id="menu-item-6854" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6854"><a style="color: white" href="https://furamavietnam.com/vi/lifestyle-blog/">Lifestyle Blog</a></li>
+                            <li id="menu-item-6856" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6856"><a  style="color: white" href="https://furamavietnam.com/vi/work-with-us/">Tuyển Dụng</a></li>
+                            <li id="menu-item-6857" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6857"><a  style="color: white" href="https://furamavietnam.com/vi/contact/">Liên Hệ</a></li>
                         </ul></div></div><div id="text-5" class="footer-widget4  widget_text">			<div class="textwidget"></div>
                     </div>                    </div>
                     <div class="col-sm mt-2 mt-sm-0">
                         <h4>
                             Liên hệ                            </h4>
-                        <ul class="icn-list">
-                            <li> <i class="icon-placeholder"></i><span style="color: #707070;font-size: 12px">103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</span><br style="margin: 0px;padding: 0px;color: #707070;font-size: 12px"><span style="color: #707070;font-size: 12px">Tel.: 84-236-3847 333/888 *
-</span><span style="color: #707070;font-size: 12px">Fax: 84-236-3847 666</span><br style="margin: 0px;padding: 0px;color: #707070;font-size: 12px"><span style="color: #707070;font-size: 12px">Email:&nbsp;</span><a class="link" style="margin: 0px;padding: 0px;color: #707070;font-size: 12px" href="mailto:reservation@furamavietnam.com">reservation@furamavietnam.com</a><span style="color: #707070;font-size: 12px">&nbsp;*&nbsp;</span><a class="link" style="margin: 0px;padding: 0px;color: #707070;font-size: 12px" href="https://www.furamavietnam.com/undefined/">www.furamavietnam.com</a>
+                        <ul class="icn-list" style="color:white ">
+                            <li> <i class="icon-placeholder"></i><span style="color: white;font-size: 12px">103 - 105 Vo Nguyen Giap Street, Khue My Ward, Ngu Hanh Son District, Danang City, Vietnam</span><br style="margin: 0px;padding: 0px;color: white;font-size: 12px"><span style="color:white;font-size: 12px">Tel.: 84-236-3847 333/888 *
+</span><span style="color: white;font-size: 12px">Fax: 84-236-3847 666</span><br style="margin: 0px;padding: 0px;color: white;font-size: 12px"><span style="color: white;font-size: 12px">Email:&nbsp;</span><a class="link" style="margin: 0px;padding: 0px;color: white;font-size: 12px" href="mailto:reservation@furamavietnam.com">reservation@furamavietnam.com</a><span style="color: white;font-size: 12px">&nbsp;*&nbsp;</span><a class="link" style="margin: 0px;padding: 0px;color: white;font-size: 12px" href="https://www.furamavietnam.com/undefined/">www.furamavietnam.com</a>
 
                                 <p>&nbsp;</p>
 
@@ -530,7 +536,7 @@
                     <div class="col-sm-auto col-lg-12 col-xl-auto">
                         <div class="footer-copyright text-left">
                             <img src="https://furamavietnam.com/wp-content/uploads/2019/02/Ariyana-Tourism-Complex-02-2.png" alt="Ariyana Tourism Complex" width="500px;">                            <div class="clearfix d-md-none"></div>
-                            © 2018 Furama Resort Danang.                        </div>
+                            © 2022 Furama Resort Danang.                        </div>
                     </div>
                 </div>
                 <!-- map -->

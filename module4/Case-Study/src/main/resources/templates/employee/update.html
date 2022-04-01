@@ -32,7 +32,13 @@
                     <a class="nav-link" th:href="@{/service}"><h5 style="color: white">Service</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#"><h5 style="color: white">Contract</h5></a>
+                    <a class="nav-link " th:href="@{/contract}"><h5 style="color: white">Contract</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/shop}"><h5 style="color: white">Cuisine</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/service-vila-house-room}"><h5 style="color: white">Booking</h5></a>
                 </li>
             </ul>
         </div>
@@ -41,7 +47,7 @@
         <div class="col-sm-1">
             <table>
                 <tr>
-                    <td> <h6><a class="text-white " href="/url/page">Đăng nhập</a></h6></td>
+                    <td> <h6><a class="text-white " th:href="@{/login}">Đăng nhập</a></h6></td>
                 </tr>
             </table>
             <td><i class='fab fa-facebook' style='font-size:28px ; color: darkblue'></i></td>
@@ -113,6 +119,7 @@
             <td>Position</td>
             <td>
                 <select class="form-control" th:field="*{position.id}">
+                    <option value="">Chọn</option>
                     <option th:each="position: ${positionList}" th:value="${position.id}" th:text="${position.positionName}"></option>
                 </select>
             </td>
@@ -122,6 +129,7 @@
             <td>Division</td>
             <td>
                 <select class="form-control" th:field="*{division.id}">
+                    <option value="">Chọn</option>
                     <option th:each="division: ${divisionList}" th:value="${division.id}" th:text="${division.divisionName}"></option>
                 </select>
             </td>
@@ -130,6 +138,7 @@
             <td>Education</td>
             <td>
                 <select class="form-control" th:field="*{education.id}">
+                    <option value="">Chọn</option>
                     <option th:each="education: ${educationList}" th:value="${education.id}" th:text="${education.educationName}"></option>
                 </select>
             </td>

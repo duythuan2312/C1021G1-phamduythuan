@@ -104,5 +104,18 @@ public class EmployController {
         }
         return "redirect:/employee";
     }
+    @GetMapping("/search-employee")
+    public ModelAndView searhCustomer(@PageableDefault(value = 5) Pageable pageable,@RequestParam String nameEmployee){
+        ModelAndView modelAndView = new ModelAndView("employee/list");
+        modelAndView.addObject("employeeList",employeeService.findByName(pageable,nameEmployee));
+        return modelAndView;
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ModelAndView error(){
+        ModelAndView modelAndView = new ModelAndView("/error");
+        return modelAndView;
+    }
+
 
 }

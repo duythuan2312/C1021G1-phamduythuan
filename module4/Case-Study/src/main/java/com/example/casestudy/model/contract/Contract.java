@@ -1,64 +1,66 @@
 package com.example.casestudy.model.contract;
 
-import com.example.casestudy.model.contract.ContracDetail;
 import com.example.casestudy.model.customer.Customer;
 import com.example.casestudy.model.employee.Employee;
 import com.example.casestudy.model.service.Service;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.Set;
 
 @Entity
 public class Contract {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private Date contractStartDate;
-    private  Date contractEndDate;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String contractStartDate;
+    private String contractEndDate;
     private double contractDeposit;
     private double totalMoney;
 
-    @ManyToOne
-    @JoinColumn(name = "employee_id",referencedColumnName = "id")
-    private Employee employee;
 
     @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "id")
     private Customer customer;
 
 
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id",referencedColumnName = "id")
+    private Employee employee;
+
     @ManyToOne
     @JoinColumn(name = "service_id",referencedColumnName = "id")
     private Service service;
-    @OneToMany(mappedBy = "contract")
+
+
+    @OneToMany(mappedBy = "contract",cascade = CascadeType.ALL)
     private Set<ContracDetail> contracDetails;
 
 
     public Contract() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Date getContractStartDate() {
+    public String getContractStartDate() {
         return contractStartDate;
     }
 
-    public void setContractStartDate(Date contractStartDate) {
+    public void setContractStartDate(String contractStartDate) {
         this.contractStartDate = contractStartDate;
     }
 
-    public Date getContractEndDate() {
+    public String getContractEndDate() {
         return contractEndDate;
     }
 
-    public void setContractEndDate(Date contractEndDate) {
+    public void setContractEndDate(String contractEndDate) {
         this.contractEndDate = contractEndDate;
     }
 

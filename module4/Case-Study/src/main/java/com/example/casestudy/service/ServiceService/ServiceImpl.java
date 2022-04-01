@@ -32,4 +32,9 @@ public class ServiceImpl implements IService{
     public Optional<Service> findByID(Long id) {
         return iServiceRepository.findById(id);
     }
+
+    @Override
+    public Page<Service> findByName(Pageable pageable, String nameService) {
+        return iServiceRepository.findAllByServiceNameContaining(nameService,pageable);
+    }
 }

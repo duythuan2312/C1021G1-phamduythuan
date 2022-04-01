@@ -24,6 +24,7 @@ public class ServiceType {
 
 
 
+
     public ServiceType() {
     }
 

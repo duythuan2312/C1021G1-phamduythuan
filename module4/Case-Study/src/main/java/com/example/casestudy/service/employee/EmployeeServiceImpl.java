@@ -33,4 +33,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Optional<Employee> findByID(Long id) {
       return iEmployeeRepository.findById(id);
     }
+
+    @Override
+    public Page<Employee> findByName(Pageable pageable, String nameEmployee) {
+        return iEmployeeRepository.findAllByEmployeeNameContaining(nameEmployee,pageable);
+    }
 }

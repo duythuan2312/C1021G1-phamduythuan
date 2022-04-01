@@ -4,11 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel = "icon" href =
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="icon" href=
             "https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png"
-          type = "image/x-icon">
+          type="image/x-icon">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<!--    <style>-->
+<!--        body{-->
+<!--            background-image: url("https://lalyanasensesworlds.com/wp-content/uploads/2020/03/furama-resort-spa.jpg");-->
+<!--        }-->
+<!--        table *{-->
+<!--            color: white;-->
+<!--        }-->
+<!--    </style>-->
+
+
 </head>
 <body>
 <div class="container-fluid" style="background: darkcyan">
@@ -16,10 +28,9 @@
         <div class="col-sm-4">
             <table>
                 <tr>
-                    <td><img src="https://phuongviethcm.com/wp-content/uploads/2019/07/FURAMA.png" alt="" width="100px" height="100px"></td>
-                    <td>  <a class="nav-link" th:href="@{/}"><h5 style="color: white">FURAMARESORT</h5></a></td>
-
-
+                    <td><img src="https://phuongviethcm.com/wp-content/uploads/2019/07/FURAMA.png" alt="" width="100px"
+                             height="100px"></td>
+                    <td><a class="nav-link" th:href="@{/}"><h5 style="color: white">FURAMARESORT</h5></a></td>
                 </tr>
             </table>
 
@@ -36,16 +47,31 @@
                     <a class="nav-link" th:href="@{/service}"><h5 style="color: white">Service</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#"><h5 style="color: white">Contract</h5></a>
+                    <a class="nav-link " th:href="@{/contract}"><h5 style="color: white">Contract</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/shop}"><h5 style="color: white">Cuisine</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/service-vila-house-room}"><h5 style="color: white">Booking</h5></a>
                 </li>
             </ul>
         </div>
         <div class="col-sm-3">
+
+            <form th:action="@{/search-service}" method="get">
+                <div class="input-group rounded">
+                    <input type="search" name="nameService" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                    <span class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </span>
+                </div>
+            </form>
         </div>
         <div class="col-sm-1">
             <table>
                 <tr>
-                    <td> <h6><a class="text-white " th:href="@{/login}">Đăng nhập</a></h6></td>
+                    <td><h6><a class="text-white " th:href="@{/login}">Đăng nhập</a></h6></td>
                 </tr>
             </table>
             <td><i class='fab fa-facebook' style='font-size:28px ; color: darkblue'></i></td>
@@ -54,37 +80,178 @@
     </div>
 </div>
 
-<table class="table">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>ServiceName</th>
-        <th>Area</th>
-        <th>ServiceCost</th>
-        <th>MaxPeople</th>
-        <th>Description</th>
-        <th>PoolArea</th>
-        <th>Number</th>
-        <th>ServiceType</th>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm-5">
+        <h2> <a class="btn btn-success" th:href="@{/create-service}">Add New</a></h2>
+        <table class="table" >
+            <thead style="background: lightseagreen">
+            <tr>
+                <th>ServiceName</th>
+                <th>Area</th>
+                <th>ServiceCost</th>
+                <th>MaxPeople</th>
+                <th>Description</th>
+                <th>PoolArea</th>
+                <th>Number</th>
+                <th>ServiceType</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="service :${serviceList}">
+                <td th:text="${service.serviceName}"></td>
+                <td th:text="${service.area}"></td>
+                <td th:text="${service.serviceCost}"></td>
+                <td th:text="${service.serviceMaxPeople}"></td>
+                <td th:text="${service.description}"></td>
+                <td th:text="${service.poolArea}"></td>
+                <td th:text="${service.numberOfFloors}"></td>
+                <td th:text="${service.serviceType.serviceTypeName}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-1">
 
-    </tr>
-    </thead>
-    <tbody>
-    <tr  th:each="service :${serviceList}">
-        <td scope="row" th:text="${service.id}"></td>
-        <td scope="row" th:text="${service.serviceName}"></td>
-        <td scope="row" th:text="${service.area}"></td>
-        <td scope="row" th:text="${service.serviceCost}"></td>
-        <td scope="row" th:text="${service.serviceMaxPeople}"></td>
-        <td scope="row" th:text="${service.description}"></td>
-        <td scope="row" th:text="${service.poolArea}"></td>
-        <td scope="row" th:text="${service.serviceType.serviceTypeName}"></td>
-    </tr>
-    </tbody>
-</table>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </div>
 
+<!--    <div class="col-sm-5">-->
+<!--        <center>-->
+<!--        <div>-->
+<!--            <h2 style="color: cadetblue">Villa</h2>-->
+<!--            <img src="https://s3-ap-southeast-1.amazonaws.com/viettrip/Products/d3922cb3-5f07-416a-8d65-bf456e7e4f09/145125_17012020_dsc3950-copy.jpg" width="100%" height="50%" alt="">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <h2 style="color: cadetblue">House</h2>-->
+<!--            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas-_Exterior-1-F-871x563.jpg" width="100%" height="50%" alt="">-->
+<!--        </div>-->
+
+<!--        <div>-->
+<!--            <h2 style="color: cadetblue">Room</h2>-->
+<!--            <img src="https://furamavietnam.com/wp-content/uploads/2018/08/Vietnam_Danang_Furama_Villas_Beach_Pool_Villas_Bedroom-2-1047x563.jpg" width="100%" height="50%" alt="">-->
+<!--        </div>-->
+<!--        </center>-->
+
+<!--    </div>-->
+
+</div>
+</div>
+
+<!--<div class="container-fluid">-->
+<!--    <div class="row">-->
+<!--        <h2>Villa</h2>-->
+<!--        <div class="col-sm-5">-->
+<!--            <div th:each="villa:${villaList}">-->
+<!--                <div class="card mb-3" style="max-width: 540px;">-->
+<!--                    <div class="row g-0">-->
+<!--                        <div class="col-md-4">-->
+<!--                            <img th:src="${villa.image}" class="img-fluid rounded-start" alt="...">-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8">-->
+<!--                            <div class="card-body">-->
+<!--                                <h5 class="card-title" th:text="${villa.description}"></h5>-->
+<!--                                <p class="card-text" th:text="${villa.voucher}"></p>-->
+<!--                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="col-sm-1">-->
+<!--        </div>-->
+<!--        <h2>House</h2>-->
+<!--        <div class="col-sm-5">-->
+<!--            <div th:each="house:${houseList}">-->
+<!--                <div class="card mb-3" style="max-width: 540px;">-->
+<!--                    <div class="row g-0">-->
+<!--                        <div class="col-md-4">-->
+<!--                            <img th:src="${house.image}" class="img-fluid rounded-start" alt="...">-->
+<!--                        </div>-->
+<!--                        <div class="col-md-8">-->
+<!--                            <div class="card-body">-->
+<!--                                <h5 class="card-title" th:text="${house.standRoom}"></h5>-->
+<!--                                <p class="card-text" th:text="${house.descripttion}"></p>-->
+<!--                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;        <div class="container" th:each="villa:${villaList}">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <div class="row">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <div class="col-sm-6" >&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <div class="khoi">&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">&ndash;&gt;-->
+<!--        &lt;!&ndash;                            <div class="carousel-inner">&ndash;&gt;-->
+<!--        &lt;!&ndash;                                <h6><img th:src="${villa.image}" alt="" width="100%" height=""></h6>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">&ndash;&gt;-->
+<!--        &lt;!&ndash;                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>&ndash;&gt;-->
+<!--        &lt;!&ndash;                                <span class="visually-hidden">Previous</span>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            </button>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">&ndash;&gt;-->
+<!--        &lt;!&ndash;                                <span class="carousel-control-next-icon" aria-hidden="true"></span>&ndash;&gt;-->
+<!--        &lt;!&ndash;                                <span class="visually-hidden">Next</span>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            </button>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            <h3 th:text="${villa.standardRoom}"></h3>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            Diện tích hồ bơi:<h6 th:text="${villa.poodArea}"></h6>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <div class="col-sm-5">&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <div class="khoi">&ndash;&gt;-->
+<!--        &lt;!&ndash;                      VouCher&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <hr>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                            <h6 th:text="${villa.voucher}"></h6>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;      <div class="col-sm-5">&ndash;&gt;-->
+<!--        &lt;!&ndash;          <table class="table-cell">&ndash;&gt;-->
+<!--        &lt;!&ndash;              <tr>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <th>Photo</th>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <th>StandarRoom</th>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <th>Description</th>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <th>PoodArea</th>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <th>Voucher</th>&ndash;&gt;-->
+<!--        &lt;!&ndash;              </tr>&ndash;&gt;-->
+<!--        &lt;!&ndash;              <tr th:each="villa:${villaList}">&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <td>  <img width="30%" height="25%" th:src="${villa.image}"  />&ndash;&gt;-->
+<!--        &lt;!&ndash;                  </td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <td th:text="${villa.standardRoom}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <td th:text="${villa.description}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <td th:text="${villa.poodArea}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;                  <td th:text="${villa.voucher}"></td>&ndash;&gt;-->
+<!--        &lt;!&ndash;              </tr>&ndash;&gt;-->
+<!--        &lt;!&ndash;          </table>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;      </div>&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        <div class="col-sm-1"></div>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <div class="col-sm-5"></div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
 </body>
 </html>

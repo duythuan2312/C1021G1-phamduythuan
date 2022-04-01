@@ -32,7 +32,13 @@
                     <a class="nav-link" th:href="@{/service}"><h5 style="color: white">Service</h5></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#"><h5 style="color: white">Contract</h5></a>
+                    <a class="nav-link " th:href="@{/contract}"><h5 style="color: white">Contract</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/shop}"><h5 style="color: white">Cuisine</h5></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/service-vila-house-room}"><h5 style="color: white">Booking</h5></a>
                 </li>
             </ul>
         </div>
@@ -41,7 +47,7 @@
         <div class="col-sm-1">
             <table>
                 <tr>
-                    <td> <h6><a class="text-white " href="/url/page">Đăng nhập</a></h6></td>
+                    <td> <h6><a class="text-white " th:href="@{/login}">Đăng nhập</a></h6></td>
                 </tr>
             </table>
             <td><i class='fab fa-facebook' style='font-size:28px ; color: darkblue'></i></td>

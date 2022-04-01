@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<h2>Tạo Mới Giao Dịch</h2>
+
+<form th:action="@{/create}" th:object="${transactionDto}" method="post" >
+    <table class="table" >
+        <tr>
+            <td>Mã Giao Dịch</td>
+            <td><input class="form-control" type="text" th:field="*{codeTransaction}"></td>
+
+        </tr>
+        <tr>
+            <td><h6  style="color: red" th:if="${#fields.hasErrors('codeTransaction')}" th:errors="*{codeTransaction}"></h6></td>
+        </tr>
+
+         <tr>
+            <td>NameCustomer</td>
+            <td>
+                <select class="form-control" th:field="*{customer}">
+                    <option value="">Chọn</option>
+                    <option th:each="customer: ${customerList}" th:value="${customer.id}" th:text="${customer.nameCustomer}"></option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Ngày Giao Dịch</td>
+            <td><input class="form-control" type="date" th:field="*{dateTransaction}"></td>
+
+        </tr>
+        <tr>
+            <td><h6  style="color: red" th:if="${#fields.hasErrors('dateTransaction')}" th:errors="*{dateTransaction}"></h6></td>
+        </tr>
+
+        <tr>
+            <td>Loại Dịch Vụ</td>
+            <td><input type="radio" th:field="*{typeOfService}"  value="Đất">Đất
+            <input  type="radio" th:field="*{typeOfService}" value="Nhà Đất">Nhà Đất</td>
+
+        </tr>
+        <tr>
+            <td><h6  style="color: red" th:if="${#fields.hasErrors('typeOfService')}" th:errors="*{typeOfService}"></h6></td>
+        </tr>
+
+        <tr>
+            <td>Đơn giá(VND/m2)</td>
+            <td><input class="form-control" type="text" th:field="*{price}"></td>
+
+        </tr>
+        <tr>
+            <td><h6  style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></h6></td>
+        </tr>
+
+        <tr>
+            <td>Diện Tích(m2)</td>
+            <td><input class="form-control" type="text" th:field="*{area}"></td>
+
+        </tr>
+        <tr>
+            <td><h6  style="color: red" th:if="${#fields.hasErrors('area')}" th:errors="*{area}"></h6></td>
+        </tr>
+        <tr>
+            <td><input class="btn btn-primary" type="submit" value="Create"></td>
+            <td><input class="btn btn-secondary" type="reset" value="Hủy"></td>
+        </tr>
+
+    </table>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

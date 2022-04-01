@@ -90,5 +90,18 @@ public class CustomerController {
         return "redirect:/customer";
     }
 
+    @GetMapping("/search-customer")
+        public ModelAndView searhCustomer(@PageableDefault(value = 5) Pageable pageable,@RequestParam String nameCustomer){
+        ModelAndView modelAndView = new ModelAndView("customer/list");
+        modelAndView.addObject("customerList",customerService.findByName(pageable,nameCustomer));
+        return modelAndView;
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ModelAndView error(){
+        ModelAndView modelAndView = new ModelAndView("/error");
+        return modelAndView;
+    }
+
 
 }

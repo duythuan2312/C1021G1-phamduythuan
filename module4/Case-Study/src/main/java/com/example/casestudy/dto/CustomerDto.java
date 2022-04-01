@@ -2,7 +2,6 @@ package com.example.casestudy.dto;
 
 import com.example.casestudy.model.customer.CustomerType;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 @Component
@@ -15,9 +14,7 @@ public class CustomerDto implements Validator {
     private String phone;
     private String email;
     private String address;
-
     private CustomerType customerType;
-
 
     public CustomerDto(Long id, String customerName, String customerBirthday, Boolean gender, String customerIdCard, String phone, String email, String address, CustomerType customerType) {
         this.id = id;

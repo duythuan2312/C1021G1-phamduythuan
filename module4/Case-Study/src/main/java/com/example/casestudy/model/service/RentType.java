@@ -1,6 +1,5 @@
 package com.example.casestudy.model.service;
 
-import com.example.casestudy.model.service.Service;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -9,7 +8,7 @@ import java.util.Set;
 @Entity
 public class RentType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String rentTypeName;
     private double rentTypeCost;
@@ -20,7 +19,6 @@ public class RentType {
 
     public RentType() {
     }
-
     public Long getId() {
         return id;
     }

@@ -31,6 +31,8 @@ public class Service {
         return contracts;
     }
 
+
+
     public void setContracts(Set<Contract> contracts) {
         this.contracts = contracts;
     }

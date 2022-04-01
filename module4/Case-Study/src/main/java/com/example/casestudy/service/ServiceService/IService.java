@@ -12,4 +12,6 @@ public interface IService {
     void remove(Service service);
     void save(Service service);
     Optional<Service> findByID(Long id);
+
+    Page<Service> findByName(Pageable pageable, String nameService);
 }
