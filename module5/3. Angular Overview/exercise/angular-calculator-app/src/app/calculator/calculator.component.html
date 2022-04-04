@@ -1,0 +1,37 @@
+<center>
+<h4 style="color: green">Máy tính cầm tay</h4>
+<div class="container">
+  <div class="row">
+    <table  style="margin: auto">
+      <tr>
+        <td><input class="form-control" type="number" [(ngModel)]="num1"></td>
+
+      </tr>
+      <tr>
+        <td><input class="form-control" type="number" [(ngModel)]="num2"></td>
+      </tr>
+
+      <tr>
+        <td>Phép tính</td>
+        <td><button class="btn btn-primary" (click)="operatorSum()">+</button></td>
+        <td><button class="btn btn-primary" (click)="operatorSubtraction()">-</button></td>
+        <td><button class="btn btn-primary" (click)="operatorMultiplication()">*</button></td>
+        <td><button class="btn btn-primary" (click)="operatorDivision()">/</button></td>
+      </tr>
+
+      <tr>
+        <td><button class="btn btn-primary" (click)="calculator()">Tính</button></td>
+      </tr>
+      <tr>
+        <td>Kết quả là : {{result}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</center>
+
+
+
+
+
+
