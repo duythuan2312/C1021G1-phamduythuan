@@ -1,0 +1,24 @@
+
+  <h3 class="text-danger text-center">Danh sách học sinh</h3>
+
+<div class="container">
+ <table class="table">
+   <tr>
+     <td>STT</td>
+     <td>Họ và tên</td>
+     <td>Địa chỉ</td>
+     <td>Lớp</td>
+     <td>Điểm thi</td>
+     <td>Ảnh</td>
+   </tr>
+   <tr>
+     <td>{{student.id}}</td>
+     <td>{{student.name}}</td>
+     <td>{{student.adress}}</td>
+     <td>{{student.classRoom}}</td>
+     <td>{{student.mark}}</td>
+     <td><img [src]="student.image" width="5%" height="5%" alt=""></td>
+   </tr>
+ </table>
+</div>
+ Chấm điểm: <input type="number" (change)="getMark($event.target.value)" >
