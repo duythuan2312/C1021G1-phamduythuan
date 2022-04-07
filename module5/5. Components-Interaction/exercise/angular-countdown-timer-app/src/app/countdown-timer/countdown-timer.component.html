@@ -1,0 +1,13 @@
+<center>
+<h1>Countdown Timer</h1>
+
+<div class="container">
+  <a class="btn btn-success m-2" (click)="start()">Start</a>
+  <a class="btn btn-warning m-2" (click)="stop()">Stop</a>
+  <a class="btn btn-primary m-2" (click)="reset()">Reset</a>
+</div>
+<div class="timer">
+  <span class="timer-text">{{remainingTime+''}}<i class="fa fa-car"></i></span>
+</div>
+<h5>{{ message }}</h5>
+</center>
