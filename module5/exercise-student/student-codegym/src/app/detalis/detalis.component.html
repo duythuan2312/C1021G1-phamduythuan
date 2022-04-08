@@ -1,0 +1,11 @@
+<div class="container">
+
+      <p>STT:{{student.id}}</p>
+      <p>Họ và Tên:{{student.name}}</p>
+      <p>Địa chỉ:{{student.adress}}</p>
+      <p>Lớp:{{student.classRoom}}</p>
+      <p>Điểm số:{{student.mark}}</p>
+  <a  class="btn btn-primary" routerLink="/">Quay lại trang chính</a>
+</div>
+
+Chấm điểm: <input type="number" (change)="getMark($event.target.value)" >

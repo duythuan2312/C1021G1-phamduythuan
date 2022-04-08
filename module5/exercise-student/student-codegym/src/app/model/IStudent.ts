@@ -4,5 +4,4 @@ export interface IStudent {
   adress: string;
   classRoom: string;
   mark: number;
-  image: string;
 }

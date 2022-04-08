@@ -1,0 +1,113 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+    }
+
+    },
+    {
+      "id": 2,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+      }
+
+    },
+    {
+      "id": 3,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+      }
+
+    },
+
+    {
+      "id": 4,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+      }
+
+    },
+
+    {
+      "id": 5,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+      }
+
+    },
+
+    {
+      "id": 6,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 1,
+        "name" : "god"
+      }
+
+    }
+
+    ,   {
+      "id": 7,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+      "customerType": {
+        "id" : 8,
+        "name" : "god"
+      }
+
+    }
+  ]
+}

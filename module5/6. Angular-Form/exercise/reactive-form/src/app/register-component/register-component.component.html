@@ -1,0 +1,70 @@
+
+
+
+
+    <h2 style="text-align: center">Đăng kí</h2>
+    <form [formGroup]="createRegistration" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      </div>
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.email.errors.required && createRegistration.controls.email.touched">
+         Không được để trống
+      </div>
+
+
+      <div class="form-group">
+        <label for="passwork">Password</label>
+        <input formControlName="passwork" type="password" class="form-control" id="passwork">
+      </div>
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.email.errors.required && createRegistration.controls.email.touched">
+        Không được để trống
+      </div>
+
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input formControlName="country" type="checkboxs" class="form-control" id="country">
+      </div>
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.country.errors.required && createRegistration.controls.country.touched">
+        Không được để trống
+      </div>
+
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input formControlName="age" type="text" class="form-control" id="age">
+      </div>
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.age.errors.min && createRegistration.controls.age.touched">
+        Tuổi phải lớn hơn 18
+      </div>
+
+
+
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <input class="m-3" formControlName="gender" type="radio"  value="Name" id="gender">Nam
+        <input class="m-3" formControlName="gender" type="radio"  value="Nữ" id="nam">Male
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input formControlName="phone" type="text" class="form-control" id="phone">
+      </div>
+
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.phone.errors.pattern && createRegistration.controls.phone.touched">
+        Không đúng định dạng
+      </div>
+      <button type="submit" class="btn btn-primary">Đăng kí</button>
+    </form>
+
+
+
+

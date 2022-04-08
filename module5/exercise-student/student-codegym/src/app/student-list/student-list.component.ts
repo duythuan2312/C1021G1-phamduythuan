@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IStudent} from '../model/IStudent';
+import {StudentDao} from '../Dao/StudentDao';
 
 @Component({
   selector: 'app-student-list',
@@ -14,10 +15,10 @@ export class StudentListComponent implements OnInit {
     adress: 'Quảng Nam',
     classRoom: 'C1021G1',
     mark: 10,
-    image: 'https://cdn.lazi.vn/storage/uploads/users/avatar/1575377212_timthumb.png'
   };
+  students: IStudent[] = StudentDao.studens;
 
-
+colorRow = '';
 
   constructor() { }
 
@@ -28,4 +29,11 @@ export class StudentListComponent implements OnInit {
   getMark(value: any) {
     this.student.mark = value;
   }
+
+  chageColor(value: string) {
+    this.colorRow = value;
+
+  }
+
+
 }
