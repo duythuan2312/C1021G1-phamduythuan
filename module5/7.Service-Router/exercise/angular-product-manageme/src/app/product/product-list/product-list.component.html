@@ -1,0 +1,46 @@
+ <h2 style="color: green; text-align: center">Danh sách sản phẩm</h2>
+<table class="table" >
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Tên</th>
+    <th>Giá</th>
+    <th>Mô tả</th>
+    <th>Chức năng</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.description}}</td>
+    <td>
+      <a class="btn btn-danger m-3" data-toggle="modal" data-target="#modelId">Xóa</a>
+      <a routerLink="/edit/{{product.id}}" class="btn btn-primary">Cập nhập</a>
+  </td>
+  </tr>
+  </tbody>
+</table>
+
+
+ <!-- Modal -->
+ <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title">Xác nhận</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+        <span style="color: red"> Bạn có muốn xóa không ?</span>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+         <button type="button" class="btn btn-primary">Xóa</button>
+       </div>
+     </div>
+   </div>
+ </div>

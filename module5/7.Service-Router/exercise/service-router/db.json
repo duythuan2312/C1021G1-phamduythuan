@@ -1,0 +1,24 @@
+{
+  "word": [
+    {
+      "id": 1,
+      "word": "Hello",
+      "mean": "Xin Chào"
+    },
+    {
+      "id": 2,
+      "word": "Because",
+      "mean": "Bởi vì"
+    },
+    {
+      "id": 3,
+      "word": "Programming",
+      "mean": "Lập trình"
+    },
+    {
+      "id": 4,
+      "word": "Syntax",
+      "mean": "Cú pháp"
+    }
+  ]
+}
