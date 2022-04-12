@@ -25,13 +25,13 @@
     <td>{{customerList.phone}}</td>
     <td>{{customerList.email}}</td>
     <td>{{customerList.address}}</td>
-    <td>{{customerList.customerType}}</td>
+    <td>{{customerList.customerType.name}}</td>
     <td>
       <a class="btn btn-warning m-1" routerLink="/details/{{customerList.id}}">Details</a>
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary m-1" data-toggle="modal" (click)="getCustomer(customerList)" data-target="#exampleModal" >
-       Remove
-      </button>
+<!--      &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+<!--      <button type="button" class="btn btn-primary m-1" data-toggle="modal" (click)="getCustomer(customerList)" data-target="#exampleModal" >-->
+<!--       Remove-->
+<!--      </button>-->
       <a class="btn btn-success m-1">Edit</a>
     </td>
   </tr>

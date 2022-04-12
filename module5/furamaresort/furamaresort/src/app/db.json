@@ -111,3 +111,18 @@
     }
   ]
 }
+
+{
+  "employee": [
+    {
+      "id": 1,
+      "nameCustomer": "Phạm Duy Thuận",
+      "birthday": "23-12-2003",
+      "gender": "Nam",
+      "code": "2064006461245",
+      "email": "phamduythuan87@gmail.com",
+      "phone": "0702509243",
+      "address": "Quảng Nam",
+    }
+  ]
+}

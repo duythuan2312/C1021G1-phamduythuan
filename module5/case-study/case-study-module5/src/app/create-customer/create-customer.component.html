@@ -1,0 +1,71 @@
+<div class="container">
+     <div class="m-auto">
+       <h4 class="text-center">Thêm mới khách hàng</h4>
+       <form [formGroup]="customerForm" (ngSubmit)="save()">
+         <table class="table">
+           <tr>
+             <td>
+               <label>Tên</label>
+               <input class="form-control"  type="text" formControlName="name">
+               <h6 style="color:red;" *ngIf="customerForm.get('name').errors?.required && customerForm.get('name').touched">Không được để trống</h6>
+             </td>
+             <td>
+               <label>Ngày Sinh</label>
+               <input class="form-control"  type="date" formControlName="dayOfBirth">
+               <h6 style="color:red;" *ngIf="customerForm.get('dayOfBirth').errors?.required && customerForm.get('dayOfBirth').touched">Không được để trống</h6>
+             </td>
+           </tr>
+           <tr>
+             <td>  <label>Giới tính</label>
+               <input class="m-3"   type="radio" formControlName="gender" value="1">Nam
+               <input  class="m-3" type="radio" formControlName="gender" value="0">Nữ</td>
+             <h6 style="color:red;" *ngIf="customerForm.get('gender').errors?.required && customerForm.get('gender').touched">Không được để trống</h6>
+             <td>
+               <label>CMND</label>
+               <input class="form-control"  type="text" formControlName="idCard">
+<!--               <h6 class="alert-danger" *ngIf="customerForm.controls.idCard.errors.required && customerForm.controls.idCard.touched">Không được để trống</h6>-->
+<!--               <h6 class="alert-danger" *ngIf="customerForm.controls.idCard.errors.min && customerForm.controls.idCard.touched">Phải đúng định dạng là 12 số</h6>-->
+               <h6 style="color:red;" *ngIf="customerForm.get('idCard').errors?.required && customerForm.get('idCard').touched">Không được để trống</h6>
+               <h6 style="color:red;" *ngIf="customerForm.get('idCard').errors?.pattern && customerForm.get('idCard').touched">Phải đúng định dạng</h6>
+             </td>
+           </tr>
+           <tr>
+             <td>
+               <label>Số điện thoại</label>
+               <input class="form-control"  type="text" formControlName="phone">
+               <h6 style="color:red;" *ngIf="customerForm.get('phone').errors?.required && customerForm.get('phone').touched">Không được để trống</h6>
+               <h6 style="color:red;" *ngIf="customerForm.get('phone').errors?.pattern && customerForm.get('phone').touched">Phải đúng định dạng VD:0702509243</h6>
+             </td>
+
+             <td><label>Email</label>
+               <input class="form-control"  type="text" formControlName="email">
+               <h6 style="color:red;" *ngIf="customerForm.get('email').errors?.required && customerForm.get('email').touched">Không được để trống</h6>
+               <h6 style="color:red;" *ngIf="customerForm.get('email').errors?.email && customerForm.get('email').touched">Phải đúng định dạng VD: abc@gmail.com</h6>
+             </td>
+           </tr>
+           <tr>
+             <td>
+               <label>Địa chỉ</label>
+               <input class="form-control"  type="text" formControlName="address">
+               <h6 style="color:red;" *ngIf="customerForm.get('address').errors?.required && customerForm.get('address').touched">Không được để trống</h6>
+             </td>
+             <td>
+               <label>Loại khách hàng</label>
+               <select formControlName="customerType" class="form-control"  id="">
+                 <option value="">Chọn</option>
+                 <option *ngFor="let customerType of customerTypeList" value="{{customerType.customerTypeId}}">{{customerType.customerTypeName}}</option>
+               </select>
+               <h6 style="color:red;" *ngIf="customerForm.get('customerType').errors?.required && customerForm.get('customerType').touched">Không được để trống</h6>
+             </td>
+           </tr>
+           <tr>
+             <td><input type="reset" value="Hủy" class="btn btn-danger">
+             </td>
+             <input type="submit"  value="Thêm mới" class="btn btn-primary">
+           </tr>
+         </table>
+       </form>
+       <div>
+       </div>
+     </div>
+</div>

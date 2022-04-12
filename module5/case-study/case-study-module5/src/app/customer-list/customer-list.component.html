@@ -1,0 +1,130 @@
+<a class="btn btn-success text-center" routerLink="/create-customer">Thêm mới</a>
+<div class="container" >
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let customer of customerList">
+      <div class="card">
+        <img class="card-img-top" src="{{ customer.gender ? 'https://i.vietgiaitri.com/2022/1/5/ro-ri-ket-qua-giam-dinh-adn-cua-thay-ong-noi-le-tung-van-la-cha-cua-11-nguoi-con-85-tuoi-con-len-chuc-1fe-6251727.jpg': 'https://photo-cms-plo.zadn.vn/w800/Uploaded/2022/rkznug/2021_05_31/00-phuong-hang_brgb.jpg' }}" alt=""
+             width="100%">
+
+        <div class="card-body">
+          <h6>Tên : {{customer.name}}</h6>
+          <h6>CMND: {{customer.idCard}}</h6>
+          <br>
+          <a class="btn btn-primary m-3" data-toggle="modal" data-target="#exampleModalCenter" (click)="getInfo(customer?.customerId)">Xem chi tiết</a>
+          <a class="btn btn-danger"  data-toggle="modal" data-target="#modelId">Xóa</a>
+          <img src="" width="16px" alt="">
+        </div>
+      </div>
+
+      <!-- Modal XÓA -->
+      <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+           aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Xác nhận</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <tr style="background: coral">
+                  <th>STT</th>
+                  <th>Tên</th>
+                  <th>Ngày Sinh</th>
+                  <th>Email</th>
+                  <th>Số điện thoại</th>
+                </tr>
+                <tr>
+                  <td>{{customer?.customerId}}</td>
+                  <td>{{customer?.name}}</td>
+                  <td>{{customer?.dayOfBirth}}</td>
+                  <td>{{customer?.email}}</td>
+                  <td>{{customer?.phone}}</td>
+                </tr>
+              </table>
+              <span class="text-danger">Bạn có muốn xóa không?</span>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete(customer?.customerId)">Xóa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal CHI tiết -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Chi tiết</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table>
+              <tr>
+                <td><h6>STT</h6></td>
+                <td>{{customerDto?.customerId}}</td>
+              </tr>
+              <tr>
+                <td><h6>Tên</h6></td>
+                <td>{{customerDto?.name}}</td>
+              </tr>
+
+              <tr>
+                <td><h6>Ngày sinh</h6></td>
+                <td>{{customerDto?.dayOfBirth}}</td>
+              </tr>
+
+              <tr>
+                <td><h6>Giới tính</h6></td>
+                <td>{{customerDto?.gender}}</td>
+              </tr>
+
+
+              <tr>
+                <td> <h6>CMND</h6></td>
+                <td>{{customerDto?.idCard}}</td>
+              </tr>
+
+              <tr>
+                <td><h6>Số điện thoại</h6></td>
+                <td>{{customerDto?.phone}}</td>
+              </tr>
+              <tr>
+                <td><h6>Email</h6></td>
+                <td>{{customerDto?.email}}</td>
+              </tr>
+
+              <tr>
+                <td><h6>Địa chỉ</h6></td>
+                <td>{{customerDto?.address}}</td>
+              </tr>
+
+              <tr>
+                <td><h6>Loại khách</h6></td>
+                <td>{{customerDto?.customerType.customerTypeName}}</td>
+              </tr>
+
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+

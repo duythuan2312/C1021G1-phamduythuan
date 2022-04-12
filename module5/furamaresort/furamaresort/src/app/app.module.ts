@@ -9,6 +9,7 @@ import { NavarComponent } from './navar/navar.component';
 import { FooterComponent } from './footer/footer.component';
 import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { EditComponent } from './edit/edit.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { EditComponent } from './edit/edit.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

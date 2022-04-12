@@ -1,7 +1,4 @@
 
-
-
-
     <h2 style="text-align: center">Đăng kí</h2>
     <form [formGroup]="createRegistration" (ngSubmit)="onSubmit()">
       <div class="form-group">
@@ -13,10 +10,18 @@
          Không được để trống
       </div>
 
-
       <div class="form-group">
         <label for="passwork">Password</label>
-        <input formControlName="passwork" type="password" class="form-control" id="passwork">
+        <input  formControlName="passwork" type="password" class="form-control" id="passwork">
+      </div>
+
+      <div class="alert-danger" *ngIf="createRegistration.controls.passwork.errors.required && createRegistration.controls.passwork.touched">
+        Không được để trống
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">ConfirmPassword</label>
+        <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword">
       </div>
 
       <div class="alert-danger" *ngIf="createRegistration.controls.email.errors.required && createRegistration.controls.email.touched">
@@ -42,12 +47,16 @@
         Tuổi phải lớn hơn 18
       </div>
 
+      <div class="alert-danger" *ngIf="createRegistration.controls.age.errors.required && createRegistration.controls.age.touched">
+     Không được để trống
+      </div>
+
 
 
       <div class="form-group">
-        <label for="gender">Gender:</label>
-        <input class="m-3" formControlName="gender" type="radio"  value="Name" id="gender">Nam
-        <input class="m-3" formControlName="gender" type="radio"  value="Nữ" id="nam">Male
+        <label>Gender:</label>
+        <input class="m-3" formControlName="gender" type="radio"  value="Nữ">Female
+        <input class="m-3" formControlName="gender" type="radio"  value="Nam" >Male
       </div>
 
 

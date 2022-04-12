@@ -8,7 +8,7 @@ import {DetailsComponent} from "./details/details.component";
 
 const routes: Routes = [
   {path: '', component:FormComponent},
-  // {path: 'employee', component:EmployeeListComponent},
+  {path: 'employee', component:EmployeeListComponent},
   // {path: 'details/:id', component:DetailsComponent},
   {path: 'customer',component:CustomerListComponent}
   ];

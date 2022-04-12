@@ -3,6 +3,7 @@ import {ICustomer} from "../model/customer/ICustomer";
 // import {CustomerServiceImpl} from "../service/CustomerServiceImpl";
 import {ActivatedRoute} from "@angular/router";
 import {CustomerService} from "../service/CustomerService";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -12,21 +13,37 @@ import {CustomerService} from "../service/CustomerService";
 })
 export class CustomerListComponent implements OnInit {
 
-  customer: CustomerService;
-   customerRemove: ICustomer;
-
+  customer: ICustomer[];
+ fromValue: FormGroup;
   constructor(private customerService: CustomerService) {
-    this.customerService.getAll();
   }
 
   ngOnInit(): void {
+    this.customerService.getAll().subscribe(value =>{
+      this.customer = value;
+      console.log(value);
+    })
+    // @ts-ignore
+    this.fromValue = new FormGroup(this.ngOnInit(),
+      {
+        id: [''],
+        nameCustomer: [''],
+        birthday: [''],
+        gender: [''],
+        code: [''],
+        phone: [''],
+        email: [''],
+        address: [''],
+        customerType: ['']
+      }
+    )
 
   }
-
-  getCustomer(customerList: ICustomer) {
-    this.customerRemove = customerList;
-
-  }
+  //
+  // getCustomer(customerList: ICustomer) {
+  //   this.customerRemove = customerList;
+  //
+  // }
 
 
   // delete(customerRemove: ICustomer) {
