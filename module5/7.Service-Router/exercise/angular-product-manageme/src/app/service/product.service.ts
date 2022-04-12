@@ -37,4 +37,21 @@ export class ProductService {
   getAll() {
     return this.products;
   }
+  delete(id){
+    this.products.splice(id-1,1)
+  }
+  findById(id:number){
+    return this.products.find(product => product.id === id);
+  }
+  edit(id:number,product:Product){
+    for (let index in this.products){
+      if (this.products[index].id === id){
+        this.products[index] = product;
+      }
+    }
+  }
+
+  save(product){
+    this.products.push(product);
+  }
 }
