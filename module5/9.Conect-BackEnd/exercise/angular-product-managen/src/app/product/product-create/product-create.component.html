@@ -1,31 +1,51 @@
-<h1>Tạo sản phẩm mới</h1>
-<form [formGroup]="productForm" (ngSubmit)="submit()">
-  <table>
-    <tr>
-      <td>Mã sản phẩm:</td>
-      <td><input type="number" formControlName="id"></td>
-    </tr>
-    <tr>
-      <td>Tên sản phẩm:</td>
-      <td><input type="text" formControlName="name"></td>
-    </tr>
-    <tr>
-      <td>Giá sản phẩm</td>
-      <td><input type="number" formControlName="price"></td>
-    </tr>
-    <tr>
-      <td>Category</td>
-        <select name="category" formControlName="category" >
+<div class="container">
+  <h1 style="text-align: center">Tạo sản phẩm mới</h1>
+  <form [formGroup]="productForm" (ngSubmit)="submit()">
+    <table class="table m-auto">
+      <tr>
+        <td>Mã sản phẩm:</td>
+        <td><input class="form-control" type="number" formControlName="id"></td>
+
+      </tr>
+      <tr>
+        <h6 style="color:red;" *ngIf="productForm.get('id').errors?.required && productForm.get('id').touched">Không được để trống</h6>
+
+      </tr>
+      <tr>
+        <td>Tên sản phẩm:</td>
+        <td><input class="form-control" type="text" formControlName="name"></td>
+      </tr>
+      <tr>
+        <h6 style="color:red;" *ngIf="productForm.get('name').errors?.required && productForm.get('name').touched">Không được để trống</h6>
+
+      </tr>
+      <tr>
+        <td>Giá sản phẩm</td>
+        <td><input class="form-control" type="text" formControlName="price"></td>
+      </tr>
+      <tr>
+        <h6 style="color:red;" *ngIf="productForm.get('price').errors?.required && productForm.get('price').touched">Không được để trống</h6>
+
+      </tr>
+      <tr>
+        <td>Category</td>
+        <select class="form-control" name="category" formControlName="category" >
           <option *ngFor="let category of categoriesList" [ngValue]="category" >{{category.name}}</option>
         </select>
-    </tr>
-    <tr>
-      <td>Mô tả về sản phẩm</td>
-      <td><input type="text" formControlName="description"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><button>Tạo mới</button></td>
-    </tr>
-  </table>
-</form>
+      </tr>
+      <tr>
+        <td>Mô tả về sản phẩm</td>
+        <td><input class="form-control" type="text" formControlName="description"></td>
+      </tr>
+      <tr>
+        <h6 style="color:red;" *ngIf="productForm.get('description').errors?.required && productForm.get('description').touched">Không được để trống</h6>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" class="btn btn-primary" value="Thêm mới"></td>
+      </tr>
+    </table>
+  </form>
+
+</div>

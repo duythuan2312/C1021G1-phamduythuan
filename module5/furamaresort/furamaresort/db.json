@@ -12,7 +12,7 @@
       "customerType": {
         "id" : 1,
         "name" : "god"
-    }
+      }
 
     },
     {
@@ -94,7 +94,7 @@
 
     }
 
-    ,   {
+  ,   {
       "id": 7,
       "nameCustomer": "Phạm Duy Thuận",
       "birthday": "23-12-2003",
@@ -109,20 +109,54 @@
       }
 
     }
-  ]
-}
+  ],
 
-{
   "employee": [
     {
       "id": 1,
-      "nameCustomer": "Phạm Duy Thuận",
+      "name": "Phạm Duy Thuận",
       "birthday": "23-12-2003",
-      "gender": "Nam",
-      "code": "2064006461245",
-      "email": "phamduythuan87@gmail.com",
+      "code": "206400646156",
       "phone": "0702509243",
-      "address": "Quảng Nam",
+      "email": "phamduythuan@gmail.com",
+      "division":{
+        "id": 1,
+        "nameDivision":"Nhân Viên"
+      },
+      "position": {
+        "id": 1,
+        "namePosition": "Giám đốc"
+      },
+      "education": {
+        "id": 1,
+        "nameEducation":"Đại Học"
+      },
+      "salary": "1000USD"
+    },
+    {
+      "id": 2,
+      "name": "Đoàn Thị Hoàng Tuyên",
+      "birthday": "1-5-2003",
+      "code": "206400646156",
+      "phone": "0345123456",
+      "email": "tuyendoan@gmail.com",
+      "division":{
+        "id": 1,
+        "nameDivision":"Quản Lí"
+      },
+      "position": {
+        "id": 1,
+        "namePosition": "Giám đốc"
+      },
+      "education": {
+        "id": 1,
+        "nameEducation":"Đại Học"
+      },
+      "salary": "50000USD"
     }
   ]
 }
+
+
+
+

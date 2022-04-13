@@ -8,22 +8,24 @@
     <th>Số điện thoại</th>
     <th>Email</th>
     <th>Vị trí</th>
+    <th>Chức vụ</th>
     <th>Trình độ</th>
     <th>Lương(VND/USD)</th>
     <th>Chức năng</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let employeeList of employee">
-    <td>{{employeeList.id}}</td>
-    <td>{{employeeList.name}}</td>
-    <td>{{employeeList.birthday}}</td>
-    <td>{{employeeList.code}}</td>
-    <td>{{employeeList.phone}}</td>
-    <td>{{employeeList.email}}</td>
-    <td>{{employeeList.position}}</td>
-    <td>{{employeeList.division}}</td>
-    <td>{{employeeList.salary}}</td>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.birthday}}</td>
+    <td>{{employee.code}}</td>
+    <td>{{employee.phone}}</td>
+    <td>{{employee.email}}</td>
+    <td>{{employee.position.namePosition}}</td>
+    <td>{{employee.division.nameDivision}}</td>
+    <td>{{employee.education.nameEducation}}</td>
+    <td>{{employee.salary}}</td>
     <td>
       <a class="btn btn-warning m-1" >Details</a>
       <!-- Button trigger modal -->

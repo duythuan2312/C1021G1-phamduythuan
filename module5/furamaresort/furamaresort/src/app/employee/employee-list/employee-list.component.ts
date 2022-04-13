@@ -8,10 +8,16 @@ import {EmployeeServiceImpl} from "../../service/EmployeeServiceImpl";
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
- employee: IEmployee[] = EmployeeServiceImpl.employees;
-  constructor() { }
+ employees: IEmployee[];
+  constructor(private employeeService: EmployeeServiceImpl) { }
 
   ngOnInit(): void {
+    this.getAll();
+  }
+  getAll(){
+    this.employeeService.getAll().subscribe(value => {
+      this.employees = value;
+    })
   }
 
 }

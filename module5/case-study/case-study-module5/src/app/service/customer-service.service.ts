@@ -14,7 +14,7 @@ export class CustomerServiceService {
 
   API_CREATE = 'http://localhost:8080/create-customer';
 
-  API_BYID = 'http://localhost:8080/get/';
+  API_BY_ID = 'http://localhost:8080/get/';
 
   API_EDIT = 'http://localhost:8080/edit/';
 
@@ -33,23 +33,24 @@ export class CustomerServiceService {
 
 
   getById(idCustomer): Observable<ICustomer> {
-    return this.httpClient.get<ICustomer>(this.API_BYID+idCustomer);
+    return this.httpClient.get<ICustomer>(this.API_BY_ID+idCustomer);
   }
 
 
-  delete(customerId: number): Observable<ICustomer> {
-    return this.httpClient.get<ICustomer>(this.API_DELETE+`${customerId}`);
+  deleteCustomer(idCustomer):Observable<ICustomer>{
+    console.log(idCustomer);
+    return this.httpClient.delete<ICustomer>(this.API_DELETE+idCustomer).pipe();
   }
 
-  edit(idCustomer):Observable<ICustomer>{
-    return this.httpClient.get<ICustomer>(this.API_EDIT+idCustomer);
+  edit(idCustomer,customer: ICustomer):Observable<ICustomer>{
+    return this.httpClient.put<ICustomer>(this.API_EDIT+idCustomer,customer);
   }
 
 
   save(customer): Observable<ICustomer> {
     console.log(customer);
-    // const body = JSON.stringify(customer);
-    // console.log(body);
+    const body = JSON.stringify(customer);
+    console.log(body);
     return this.httpClient.post<ICustomer>(this.API_CREATE, customer);
   }
 

@@ -1,3 +1,7 @@
+import {IDivision} from "./IDivision";
+import {IEducation} from "./IEducation";
+import {IPosition} from "./IPosition";
+
 export interface IEmployee {
   id: number;
   name: string;
@@ -5,7 +9,9 @@ export interface IEmployee {
   code: string;
   phone: string;
   email: string;
-  division: string;
-  position: string;
   salary: string;
+  division: IDivision;
+  position: IPosition;
+  education: IEducation
+
 }

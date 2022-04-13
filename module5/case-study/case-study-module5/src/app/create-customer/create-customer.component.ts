@@ -5,6 +5,7 @@ import {CustomerServiceService} from '../service/customer-service.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
 import {ICustomer} from '../model/ICustomer';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-create-customer',
@@ -18,7 +19,11 @@ export class CreateCustomerComponent implements OnInit {
   REGEX_SDT = '(09|03|07)[0-9]{8}';
   newCustomer: ICustomer = {};
 
-  constructor(private customerTypeService: CustomerTypeService, private activatedRoute: ActivatedRoute,private  customerService : CustomerServiceService,private router: Router) {
+  constructor(private customerTypeService: CustomerTypeService,
+              private activatedRoute: ActivatedRoute,
+              private  customerService : CustomerServiceService,
+              private router: Router,
+              private matSnackBar: MatSnackBar) {
   }
 
   ngOnInit(): void {
@@ -72,5 +77,9 @@ export class CreateCustomerComponent implements OnInit {
 
     console.log(this.newCustomer);
 
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.matSnackBar.open(message, action);
   }
 }

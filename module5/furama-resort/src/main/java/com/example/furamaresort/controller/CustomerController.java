@@ -53,11 +53,9 @@ public class CustomerController {
 
 
     @DeleteMapping("customer/{id}")
-    public ResponseEntity<Customer> delete(@PathVariable String id){
-        Long customerId = Long.parseLong(id);
-        System.out.println(customerId);
-        if(iCustomerService.findById(customerId)!= null){
-            iCustomerService.remove(customerId);
+    public ResponseEntity<Customer> delete(@PathVariable Long id){
+        if(iCustomerService.findById(id)!= null){
+            iCustomerService.remove(id);
             return new ResponseEntity<>(HttpStatus.OK);
         }else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

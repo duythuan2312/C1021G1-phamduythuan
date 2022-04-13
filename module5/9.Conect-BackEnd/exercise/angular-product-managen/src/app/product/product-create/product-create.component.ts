@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProductService} from '../../service/product.service';
 import {CategoryService} from "../../service/category.service";
 import {Category} from "../../model/category";
 import {Product} from "../../model/product";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-product-create',
@@ -16,17 +17,18 @@ export class ProductCreateComponent implements OnInit {
   newProduct: Product;
 
   constructor(private productService: ProductService,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private router: Router) {
   }
 
   ngOnInit() {
     this.getAll();
     this.productForm = new FormGroup({
-      id: new FormControl(''),
-      name: new FormControl(''),
-      price: new FormControl(''),
-      category: new FormControl(''),
-      description: new FormControl(''),
+      id: new FormControl('',Validators.required),
+      name: new FormControl('',Validators.required),
+      price: new FormControl('',Validators.required),
+      category: new FormControl('',Validators.required),
+      description: new FormControl('',Validators.required),
     });
   }
 
@@ -41,8 +43,9 @@ export class ProductCreateComponent implements OnInit {
   submit() {
     const product = this.productForm.value;
     this.productService.addProduct(product).subscribe(value => {
-      console.log(product)
+      console.log(product);
     });
     this.productForm.reset();
+    this.router.navigateByUrl("/product/list")
   }
 }

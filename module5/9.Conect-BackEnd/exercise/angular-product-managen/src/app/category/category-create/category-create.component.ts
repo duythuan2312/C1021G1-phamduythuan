@@ -32,7 +32,7 @@ export class CategoryCreateComponent implements OnInit {
     this.categoryService.saveCategory(category).subscribe(()=>{
       this.categoryForm.reset();
       this.ngOnInit();
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/category/list')
     },error => {
       console.log(error)
     });

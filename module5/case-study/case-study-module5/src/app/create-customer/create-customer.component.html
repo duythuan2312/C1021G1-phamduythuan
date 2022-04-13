@@ -58,10 +58,20 @@
                <h6 style="color:red;" *ngIf="customerForm.get('customerType').errors?.required && customerForm.get('customerType').touched">Không được để trống</h6>
              </td>
            </tr>
+           <mat-form-field appearance="fill" hidden>
+             <mat-label>Message</mat-label>
+             <input matInput value="Thêm mới thành công!" #message>
+           </mat-form-field>
+
+           <mat-form-field appearance="fill" hidden>
+             <mat-label>Action</mat-label>
+             <input matInput value="OK!" #action>
+           </mat-form-field>
            <tr>
              <td><input type="reset" value="Hủy" class="btn btn-danger">
              </td>
-             <input type="submit"  value="Thêm mới" class="btn btn-primary">
+
+             <input type="submit" (click)="openSnackBar(message.value, action.value)"  value="Thêm mới" class="btn btn-primary">
            </tr>
          </table>
        </form>

@@ -27,6 +27,14 @@
     {
       "id": 8,
       "name": "Máy quạt"
+    },
+    {
+      "id": 10,
+      "name": "Máy tính bàn"
+    },
+    {
+      "id": 9,
+      "name": "Xe máy"
     }
   ],
   "products": [
@@ -57,6 +65,16 @@
       "category": {
         "id": 4,
         "name": "Tủ lạnh"
+      },
+      "description": "Fake"
+    },
+    {
+      "id": 10,
+      "name": "Máy quạt Panasonic",
+      "price": "1300000",
+      "category": {
+        "id": 8,
+        "name": "Máy quạt"
       },
       "description": "Fake"
     }

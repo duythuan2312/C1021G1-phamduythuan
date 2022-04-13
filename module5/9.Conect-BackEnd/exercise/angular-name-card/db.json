@@ -1,0 +1,25 @@
+{
+ "todo": [
+   {
+     "id": 1,
+     "content": "string",
+     "complete": "boolean"
+   } ,  {
+     "id": 2,
+     "content": "number",
+     "complete": "boolean"
+   }  , {
+     "id": 3,
+     "content": "char",
+     "complete": "boolean"
+   } ,  {
+     "id": 4,
+     "content": "split",
+     "complete": "boolean"
+   } ,  {
+     "id": 5,
+     "content": "string",
+     "complete": "boolean"
+   }
+ ]
+}

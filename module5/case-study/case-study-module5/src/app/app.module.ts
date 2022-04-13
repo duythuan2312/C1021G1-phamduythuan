@@ -10,6 +10,14 @@ import {CustomerListComponent} from './customer-list/customer-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +27,20 @@ import {ReactiveFormsModule} from '@angular/forms';
     BodyComponent,
     FooterComponent,
     CreateCustomerComponent,
+    EditCustomerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule
+
 
   ],
   providers: [],

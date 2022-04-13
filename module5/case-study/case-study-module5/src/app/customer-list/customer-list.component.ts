@@ -2,9 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ICustomer} from '../model/ICustomer';
 import {CustomerServiceService} from '../service/customer-service.service';
 import {ActivatedRoute, Route} from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms';
-import {ICustomerType} from '../model/ICustomerType';
-import {CustomerTypeService} from '../service/customer-type.service';
+
+
 
 @Component({
   selector: 'app-customer-list',
@@ -14,8 +13,8 @@ import {CustomerTypeService} from '../service/customer-type.service';
 export class CustomerListComponent implements OnInit {
   customerList: ICustomer[];
   customerDto: ICustomer = null;
-  customerForm: FormGroup;
   idCustomer: number;
+  p: number = 1;
 
 
   constructor(private customerService: CustomerServiceService, private activatedRoute: ActivatedRoute) {
@@ -40,12 +39,18 @@ export class CustomerListComponent implements OnInit {
   }
 
 
-
   delete(idCustomer) {
-    this.customerService.delete(this.idCustomer).subscribe(result => {
-      this.customerDto = result;
-      this.getAll();
-      console.log('5655996');
+    this.customerService.deleteCustomer(this.idCustomer).subscribe(data => {
+      this.customerDto = data;
+      this.ngOnInit();
     });
+
+    this.customerService.getById(idCustomer).subscribe(data => {
+      this.customerDto =data;
+    })
+  }
+
+  getId(id : number) {
+    this.idCustomer = id;
   }
 }
