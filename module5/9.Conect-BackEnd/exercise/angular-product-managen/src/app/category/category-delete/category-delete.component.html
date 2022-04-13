@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center">Xoá danh mục sản phẩm</h1>
+  <form [formGroup]="categoryForm" (ngSubmit)="deleteCategory(id)">
+    <table class="table">
+      <tr>
+        <td>Mã danh mục:</td>
+        <td><input class="form-control" type="number" formControlName="id" readonly></td>
+      </tr>
+      <tr>
+        <td>Tên danh mục:</td>
+        <td><input class="form-control"  type="text" formControlName="name"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit" class="btn btn-danger">Xóa</button></td>
+      </tr>
+    </table>
+  </form>
+
+</div>

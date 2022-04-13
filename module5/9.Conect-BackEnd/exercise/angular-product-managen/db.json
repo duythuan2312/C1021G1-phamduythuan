@@ -1,0 +1,64 @@
+{
+  "categories": [
+    {
+      "id": 2,
+      "name": "Tivi"
+    },
+    {
+      "id": 3,
+      "name": "Máy giặt"
+    },
+    {
+      "id": 4,
+      "name": "Tủ lạnh"
+    },
+    {
+      "id": 5,
+      "name": "Máy giặt"
+    },
+    {
+      "id": 1,
+      "name": "Điện thoại"
+    },
+    {
+      "id": 7,
+      "name": "Máy lọc nước"
+    },
+    {
+      "id": 8,
+      "name": "Máy quạt"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone",
+      "price": 120000,
+      "category": {
+        "id": 1,
+        "name": "Điện thoại"
+      },
+      "description": "New"
+    },
+    {
+      "id": 2,
+      "name": "Tivi",
+      "price": 5000000,
+      "category": {
+        "id": 2,
+        "name": "Tivi"
+      },
+      "description": "New"
+    },
+    {
+      "id": 3,
+      "name": "Tủ lạnh",
+      "price": 7500000,
+      "category": {
+        "id": 4,
+        "name": "Tủ lạnh"
+      },
+      "description": "Fake"
+    }
+  ]
+}
